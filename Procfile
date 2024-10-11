@@ -1,0 +1,1 @@
+web: gunicorn elevate_hackathon_2024.wsgi --log-file -
