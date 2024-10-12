@@ -16,3 +16,8 @@
 // 	"workbench.colorTheme": "Visual Studio Dark",
 // 	"terminal.integrated.gpuAcceleration": "canvas"
 // }
+{
+	"[django-html]": {
+		"editor.formatOnSave": false
+	}
+}
