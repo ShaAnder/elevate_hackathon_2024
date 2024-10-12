@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Block for navigation names -->
+		<title>
+			{% block title %}JobMe - Prepare for IT Interviews{% endblock %}
+		</title>
+
+		<!-- Block Meta -->
+		{% block meta %}
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+
+		<meta
+			name="title"
+			content="JobMe - IT Interview Preparation | Resources, Tips, and Practice"
+		/>
+
+		<meta
+			name="description"
+			content="Prepare for your next IT job interview with JobMe! Get access to technical questions, interview tips, coding challenges, and essential resources for software developers, engineers, and IT professionals."
+		/>
+
+		<meta
+			name="keywords"
+			content="IT interview preparation, software developer interviews, coding challenges, technical interview questions, IT job tips, coding practice, interview guides, job interview resources, programming exercises, IT career, interview preparation app, IT skills, software engineering, IT job readiness"
+		/>
+
+		<meta name="author" content="JobMe Team" />
+		{% endblock %} {% block core_css %}
+		<!-- Global Bootstrap link -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+			crossorigin="anonymous"
+		/>
+		<!-- Custom CSS styles Link -->
+		<link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+		{% endblock %} {% block extra_css %} {% endblock %}
+
+		<!-- FavIcon -->
+		<link rel="icon" type="image/png" href="{% static 'images/hired.png' %}" />
+	</head>
+
+	<body>
+		<!-- Header -->
+
+		<!-- Content -->
+		<main>{% block content %} {% endblock content %}</main>
+
+		<!-- Footer -->
+
+		<!-- Block for core JS scripts -->
+		{% block core_js %}
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+			crossorigin="anonymous"
+		></script>
+		{% endblock %}
+
+		<!-- Block for extra JS scripts -->
+		{% block extra_js %} {% endblock %}
+	</body>
+</html>
