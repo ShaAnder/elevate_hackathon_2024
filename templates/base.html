@@ -50,11 +50,18 @@
 
 	<body>
 		<!-- Header -->
-
+		 <!-- navigation -->
+		<div>
+			{% include 'includes/navbar.html' %}
+		</div>
 		<!-- Content -->
 		<main>{% block content %} {% endblock content %}</main>
 
 		<!-- Footer -->
+
+		<footer >
+			{% include 'includes/footer.html' %}
+		  </footer>
 
 		<!-- Block for core JS scripts -->
 		{% block core_js %}
