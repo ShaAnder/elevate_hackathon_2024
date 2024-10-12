@@ -1,0 +1,47 @@
+.video-container {
+    border: 2px solid #ffa500; /* Optional: Add a border in orange to match the theme */
+    border-radius: 5px; /* Optional: Rounded corners */
+    overflow: hidden; /* To maintain the border radius */
+    max-width: 100%; /* Make sure it scales well within the container */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #000; /* Match the navbar's black background */
+    color: #fff; /* White text for readability */
+    padding: 1.5rem 0; /* Padding for spacing */
+    border-top: 2px solid #ffa500; /* Orange border to match the theme */
+    text-align: center;
+}
+
+.footer p {
+    margin: 0.5rem 0; /* Consistent spacing between paragraphs */
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: #ffa500; /* Orange links to match the theme */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #fff; /* Change link color to white on hover for contrast */
+    text-decoration: underline; /* Optional: underline on hover for emphasis */
+}
+
+.footer .footer-team-link {
+    font-weight: bold; /* Emphasize the team link */
+}
+
+.footer i {
+    color: #ffa500; /* Social media icons in orange */
+    font-size: 1.5rem; /* Size for visibility */
+    margin-left: 0.5rem; /* Space between icons */
+    transition: color 0.3s;
+    vertical-align: middle; /* Align icons vertically with text */
+}
+
+.footer i:hover {
+    color: #fff; /* Change icon color to white on hover */
+}
