@@ -19,3 +19,15 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=100, blank=True)
+    last_name = models.CharField(max_length=100, blank=True)
+    bio = models.TextField(max_length=500, blank=True)
+    avatar = models.ImageField(upload_to="avatars/", blank=True, null=True)
+    location = models.CharField(max_length=100, blank=True)
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name} Profile"
