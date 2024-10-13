@@ -1,26 +1,79 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% load static %}
 
-{% block title %}Home - JobMe{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock%}
 
 {% block content %}
-<div class="container mt-2">
-    
-    
-    <h1 class="text-center">
-        <a href="{% url 'job_me:home' %}"> Welcome to Gig Getter! </a>
-    </h1>
 
-    <p class="text-center">This is the home page content.</p>
+<div class="hero">
+    <div class="hero-text">
+        <h1> Gig Getter </h1>
+        <p> The Only One-Stop-Shop You Need to Land Your Perfect Role </p>
+    </div>
+    <img src="{% static '/images/hero-image-1.webp' %}" alt="Hero Image" class="hero-image">
+</div>
 
-    <div class="row">
-        <div class="col-12 col-md-6">
-            <p>This column takes up half the width on tablets and full width on mobile.</p>
+<button class="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+<div class="container">
+
+    <h2>Explore available tech stacks!</h2>
+    <div class="tech-stack">
+        <button>Python</button>
+        <button>Javascript</button>
+        <button>HTML</button>
+        <button>CSS</button>
+        <button>SQL</button>
+        <button>Django</button>
+        <button>Flask</button>
+        <button>Git</button>
+        <button>Docker</button>
+        <button>CompSci</button>
+        <button>Recruiter Questions</button>
+    </div>
+
+    <!-- View Top Questions Section -->
+    <h2>View top questions!</h2>
+
+    <!-- Card Carousel -->
+    <div class="carousel-nav">
+        <button>&larr;</button>
+        <div class="card-carousel">
+            <div class="card">
+                <h3>PYTHON</h3>
+                <p>This is a text blurb about Python</p>
+            </div>
+            <div class="card">
+                <h3>Javascript</h3>
+                <p>This is a text blurb about JS</p>
+            </div>
+            <div class="card">
+                <h3>SQL</h3>
+                <p>This is a text blurb about SQL</p>
+            </div>
         </div>
-        <div class="col-12 col-md-6">
-            <p>This column also takes up half the width on tablets and full width on mobile.</p>
+        <button>&rarr;</button>
+    </div>
+    
+    <!-- Mock Interview Section -->
+    <div class="mock-interview-section">
+        <div class="mock-interview">
+            <p>Mock Interviews</p>
+        </div>
+        <div class="mock-interview">
+            <p>Track Your Progress</p>
         </div>
     </div>
 </div>
+
+<script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+</script>
+
 {% endblock %}
 
 
