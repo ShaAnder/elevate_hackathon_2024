@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about-us.css' %}">
+{% endblock%}
+
+
+{% block content %}
+
+<main class="background" id="about">
+    <div class="body-container"></div>
+    <div class="about-section">
+        <div class="about-content">
+            <h1>About Job Me</h1>
+            <p>
+                job.me is a job platform readyness site!
+            </p>
+            <a href="#team-section" class="cta-button">Meet the Team!</a>
+        </div>
+        <div class="about-image">
+            <img src="assets/images/piano-image-about-page.png" alt="Grand Piano">
+        </div>
+    </div>
+
+    <div id="team-section">
+        <div class="team-content">
+            <h2>Meet the Team</h2>
+
+            <!-- TEAM CARDS GRID -->
+            <div class="team-grid">
+
+{% endblock content %}
