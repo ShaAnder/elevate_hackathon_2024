@@ -1,5 +1,4 @@
 {% load static %}
-
 <nav class="navbar navbar-expand-lg py-0 shadow">
 	<div class="container px-4">
 		<img src="{% static 'images/logo.svg' %}" alt="Logo" class="img-fluid">
@@ -19,7 +18,7 @@
 
 				<ul class="navbar-nav ms-lg-auto p-4 p-lg-0">
 					<li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-						<a class="nav-link active" aria-current="page" href="#">Categories</a>
+						<a class="nav-link active" aria-current="page" href="{%url 'job_me:categories' %}">Categories</a>
 					</li>
 					<li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
 						<a class="nav-link active" aria-current="page" href="#">Top Questions</a>
@@ -35,3 +34,4 @@
 		</div>
 	</div>
 </nav>
+

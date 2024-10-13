@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+.categories-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+
+/* Headings */
+h2 {
+    font-weight:700;
+    margin-bottom:20px;
+    text-align: center;
+    color: #3a3a4a;
+
+}
+
+h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #555555;
+    font-weight:400;
+    text-align:center;
+
+}
+
+p{
+    color: #3a3a4a;
+    background-color:#cccc;
+    border-radius:9px;
+     
+}
+/* Search form */
+form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex: 1;
+    max-width: 200px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color:#2B8C46;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:#36AF57;
+}
+
+/* Sections */
+section {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+/* Content sections */
+.content-section {
+    background-color:#F1F1F1;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    /* Styles for tablet screens */
+    .categories-container {
+        display: flex;             
+        flex-wrap: wrap;          
+        justify-content: space-between; 
+    }
+
+    .content-section {
+        flex: 0 1 calc(33.33% - 10px);                 
+        margin: 5px;             
+        min-width: 200px;       
+        max-width: 300px;    
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+    p{
+        font-size:larger;
+    }
+    input[type="text"] {
+        max-width: 300px;
+    }
+}
