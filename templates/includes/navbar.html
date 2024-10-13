@@ -1,59 +1,149 @@
 {% load static %}
 <nav class="navbar navbar-expand-lg py-0 shadow">
-	<div class="container px-4">
-		<img src="{% static 'images/logo.svg' %}" alt="Logo" class="img-fluid">
-		<button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#top-navbar" aria-controls="top-navbar">
+	<div class="container px-5">
+		<img src="{% static 'images/logo.svg' %}" alt="Logo" class="img-fluid" />
+		<button
+			class="navbar-toggler border-0"
+			type="button"
+			data-bs-toggle="offcanvas"
+			data-bs-target="#top-navbar"
+			aria-controls="top-navbar"
+		>
 			<i class="bi bi-grid fs-3"></i>
 		</button>
-		<div class="offcanvas offcanvas-end" tabindex="-1" id="top-navbar" aria-labelledby="top-navbarLabel">
-
-			<button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#top-navbar" aria-controls="top-navbar">
-				<div class="d-flex justify-content-between align-items-center p-2 border-bottom border-secondary">
-					<img src="{% static 'images/logo.svg' %}" alt="Logo" class="img-fluid">
+		<div
+			class="offcanvas offcanvas-end"
+			tabindex="-1"
+			id="top-navbar"
+			aria-labelledby="top-navbarLabel"
+		>
+			<button
+				class="navbar-toggler border-0"
+				type="button"
+				data-bs-toggle="offcanvas"
+				data-bs-target="#top-navbar"
+				aria-controls="top-navbar"
+			>
+				<div
+					class="d-flex justify-content-between align-items-center p-2 border-bottom border-secondary"
+				>
+					<img
+						src="{% static 'images/logo.svg' %}"
+						alt="Logo"
+						class="img-fluid"
+					/>
 					<i class="bi bi-grid fs-3"></i>
 				</div>
-				
 			</button>
 
+			<ul class="navbar-nav ms-lg-auto p-4 p-lg-0 text-center">
+				<li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
+					<a
+						class="nav-link active"
+						aria-current="page"
+						href="{% url 'job_me:categories' %}"
+						>Categories</a
+					>
+				</li>
+				<li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
+					<a class="nav-link active" aria-current="page" href="#"
+						>Top Questions</a
+					>
+				</li>
+				<li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
+					<a class="nav-link active" aria-current="page" href="#"
+						>Interview Sim</a
+					>
+				</li>
+				<li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
+					<a
+						class="nav-link active"
+						aria-current="page"
+						href="{% url 'job_me:about' %}"
+						>About Us</a
+					>
+				</li>
 
-				<ul class="navbar-nav ms-lg-auto p-4 p-lg-0 text-center">
-					<li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-						<a class="nav-link active" aria-current="page" href="{% url 'job_me:categories' %}">Categories</a>
-					</li>
-					<li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-						<a class="nav-link active" aria-current="page" href="#">Top Questions</a>
-					</li>
-					<li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-						<a class="nav-link active" aria-current="page" href="#">Interview Sim</a>
-					</li>
-					<li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-						<a class="nav-link active" aria-current="page" href="{% url 'job_me:about' %}">About Us</a>
-					</li>
-					{% if user.is_authenticated %}
-    <li class="ms-0 ms-sm-5 px-3 px-lg-0 py-1 py-lg-4">
-        <div class="dropdown">
-            <a class="dropdown-toggle no-arrow" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="bi bi-person-square fs-3 text-dark"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-                <li>
-                    <a class="dropdown-item" href="#">Profile</a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Logout</a>
-                </li>
-            </ul>
-        </div>
-    </li>
-{% else %}
-    <li class="ms-0 ms-sm-5 px-3 px-lg-0 py-1 py-lg-4">
-        <a class="btn btn-dark rounded-0 custom-signup-btn" href="{% url 'account_signup' %}">Signup</a>
-    </li>
-{% endif %}
+				{% if user.is_authenticated %}
+				<!-- Profile and Logout buttons inside Offcanvas Menu, visible on small screens only -->
+				<li class="nav-item px-3 px-lg-0 py-1 py-lg-4 d-lg-none">
+					<a
+						class="btn btn-outline-dark w-100"
+						href="#"
+						>Profile</a
+					>
+				</li>
+				<li class="nav-item px-3 px-lg-0 py-1 py-lg-4 d-lg-none">
+					<a
+						class="btn btn-outline-danger w-100"
+						href="#"
+						data-bs-toggle="modal"
+						data-bs-target="#exampleModal"
+						>Logout</a
+					>
+				</li>
+				{% else %}
+				<!-- Signup button inside Offcanvas Menu for small screens -->
+				<li class="ms-0 ms-sm-5 px-3 px-lg-0 py-1 py-lg-4 d-lg-none">
+					<a
+						class="btn btn-dark rounded-0 custom-signup-btn w-100"
+						href="{% url 'account_signup' %}"
+						>Signup</a
+					>
+				</li>
+				{% endif %}
 
-				</ul>
-
+				<!-- Dark Mode Button inside Offcanvas Menu, only visible on small screens -->
+				<li class="d-lg-none px-3 px-lg-0 py-1 py-lg-4">
+					<a class="btn btn-outline-dark w-100" id="darkModeToggleSmall" onclick="toggleDarkMode()">
+							Dark Mode <i id="darkModeIconSmall" class="bi bi-sun"></i>
+					</a>
+			</li>
+			</ul>
 		</div>
 	</div>
+
+	<!-- Profile and Logout dropdown for large screens (visible on large screens only) -->
+	{% if user.is_authenticated %}
+		<div class="d-none d-lg-block me-5">
+			<div class="dropdown">
+				<a
+					class="dropdown-toggle no-arrow"
+					href="#"
+					role="button"
+					data-bs-toggle="dropdown"
+					aria-expanded="false"
+				>
+					<i class="bi bi-person-square fs-3 text-dark"></i>
+				</a>
+				<ul class="dropdown-menu dropdown-menu-end">
+					<li>
+						<a class="dropdown-item" href="#">Profile</a>
+					</li>
+					<li>
+						<a
+							class="dropdown-item"
+							href="#"
+							data-bs-toggle="modal"
+							data-bs-target="#exampleModal"
+							>Logout</a
+						>
+					</li>
+				</ul>
+			</div>
+		</div>
+	{% else %}
+		<!-- Signup button for large screens -->
+		<a
+			class="btn btn-dark rounded-0 custom-signup-btn d-none d-lg-block me-5"
+			href="{% url 'account_signup' %}"
+			>Signup</a
+		>
+	{% endif %}
+
+	<!-- Dark Mode Button for large screens (visible on large screens only) -->
+	<a class="fs-3 me-5 d-none d-lg-block" id="darkModeToggleLarge" onclick="toggleDarkMode()">
+    <i id="darkModeIconLarge" class="bi bi-sun"></i>
+</a>
 </nav>
 
