@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/categories.css' %}">
+{% endblock%}
+
+
+{% block content %}
+
+<main class="categories-container">
+<div>
+<h2>Learn more about the tech stacks you need get usefull information and answer questions</h2>
+
+<form action="/search" method="get">
+    <input type="text" id="searchBar" name="query" placeholder="Search...">
+    <button type="submit">Search</button>
+</form>
+</div>
+ <section class="frontend-section ">
+ <h3>Front End </h3>
+ <div class="content-section" id="section-html">
+    <p>HTML</p>
+</div>
+<div class="content-section" id="section-css">
+    <p> CSS</p>
+</div>
+<div class="content-section" id="section-js">
+    <p>JavaScript</p>
+</div>
+ </section>
+ <section class="backend-section">
+    <h3>Back End  </h3>
+    <div class="content-section" id="section-py">
+       <p>Python</p>
+   </div>
+   <div class="content-section" id="section-sql">
+       <p>SQL</p>
+   </div>
+   <div class="content-section" id="section-django">
+       <p>Django</p>
+   </div>
+    </section>
+    <section class="backend-section">
+        <h3>Misc </h3>
+        <div class="content-section" id="section1">
+           <p>P</p>
+       </div>
+       <div class="content-section" id="section2">
+           <p>p</p>
+       </div>
+       <div class="content-section" id="section3">
+           <p>p</p>
+       </div>
+        </section>
+
+</main>
+
+{% endblock content %}
