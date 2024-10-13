@@ -30,10 +30,28 @@
 					<li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
 						<a class="nav-link active" aria-current="page" href="#">About Us</a>
 					</li>
+					{% if user.is_authenticated %}
+    <li class="ms-0 ms-sm-5 px-3 px-lg-0 py-1 py-lg-4">
+        <div class="dropdown">
+            <a class="dropdown-toggle no-arrow" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person-square fs-3 text-dark"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                    <a class="dropdown-item" href="#">Profile</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </li>
+{% else %}
+    <li class="ms-0 ms-sm-5 px-3 px-lg-0 py-1 py-lg-4">
+        <a class="btn btn-dark rounded-0 custom-signup-btn" href="{% url 'account_signup' %}">Signup</a>
+    </li>
+{% endif %}
 
-					<li class="ms-0 ms-sm-5 px-3 px-lg-0 py-1 py-lg-4">
-						<button class="btn btn-dark rounded-0 custom-signup-btn" href="#">Signup</button>
-					</li>
 				</ul>
 
 		</div>

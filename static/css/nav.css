@@ -34,3 +34,7 @@
 .offcanvas.show .custom-signup-btn {
 	width: 100%;
 }
+
+.no-arrow::after {
+	display: none;
+}
