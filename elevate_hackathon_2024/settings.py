@@ -21,6 +21,7 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "job-me-c2269b1b44b0.herokuapp.com",
+    "8000-shaander-elevatehackath-6m90ift8l4t.ws-eu116.gitpod.io",
 ]
 
 
@@ -138,7 +139,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "/static/"
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"

@@ -48,7 +48,11 @@
 
 		<!-- Bootstrap Icons Link -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-		{% endblock %} {% block extra_css %} {% endblock %}
+		{% endblock %} 
+		
+		{% block extra_css %} 
+		<link rel="stylesheet" href="{% static 'css/nav.css' %}">
+		{% endblock %}
 
 	</head>
 
@@ -59,7 +63,7 @@
 			{% include 'includes/navbar.html' %}
 		</div>
 		<!-- Content -->
-		<main>{% block content %} {% endblock content %}</main>
+		<main class="d-flex flex-column min-vh-100">{% block content %} {% endblock content %}</main>
 
 		<!-- Footer -->
 
@@ -78,5 +82,6 @@
 
 		<!-- Block for extra JS scripts -->
 		{% block extra_js %} {% endblock %}
+		{% include 'includes/logout_modal.html' %}
 	</body>
 </html>

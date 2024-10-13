@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock%}
+
+
+{% block content %}
+
+<main class="background" id="about">
+    <div class="body-container"></div>
+    <div class="about-section">
+        <div class="about-content">
+            <h1>About job.me</h1>
+            <p>
+                job.me is a technical interview readiness site, we aim to give users resource
+                links and information to help ready them for technical interviews, we also
+                present them with a small technical interview sim that allows them to answer
+                questions in a multiple choice setting, while giving feedback.
+            </p>
+            <p>
+                upon recieving a final score users have that progress added to competency 
+                badges that are stored in the user panel. We encourage people to come test
+                their knowledge and we look forward to helping you become technical interview ready!
+            </p>
+            <br>
+            <a href="#team-section" class="cta-button">Meet the Team!</a>
+        </div>
+        <div class="about-image">
+            <img src="{% static '/images/interview.jpg' %}" alt="technical-interview"  style="width:500px">
+        </div>
+    </div>
+
+    <div id="team-section">
+        <div class="team-content">
+            <h2>Meet the Team</h2>
+
+            <!-- Cards grid for team members -->
+            <div class="team-grid">
+                <div class="card">
+                        <div class="card-image">
+                            <img src="{% static '/images/team/shaun.png' %}" alt="image of shaun">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Shaun Anderton</h3>
+                            <p class="card-role"><span class="bold">Team Role: </span>Scrum Lead & Frontend Developer</p>
+                            <p class="card-text">Somewhat seasoned freelance React doveloper, 
+                            I have a passion for front end and a desire to work hard to learn something new and create my best work every day. 
+                            This project was incredibly enjoyable to lead and I look forward to the next big adventure.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="button-group">
+                                <a href="https://github.com/ShaAnder" class="btn" target="_blank"
+                                    rel="noopener noreferrer" title="Shaun Anderton's GitHub Profile"><i
+                                        class="fa-brands fa-github fa-xl"></i></a>
+                                <a href="https://www.linkedin.com/in/shaun-anderton-551670a9/" class="btn" target="_blank"
+                                    rel="noopener noreferrer" title="Shaun Anderton's LinkedIn Profile"><i
+                                        class="fa-brands fa-linkedin-in fa-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+{% endblock content %}
