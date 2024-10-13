@@ -1,2 +1,27 @@
 {% extends 'base.html' %}
 
+{% block title %}Home - JobMe{% endblock %}
+
+{% block content %}
+<div class="container mt-2">
+    
+    
+    <h1 class="text-center">
+        <a href="{% url 'job_me:home' %}"> Welcome to Gig Getter! </a>
+    </h1>
+
+    <p class="text-center">This is the home page content.</p>
+
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <p>This column takes up half the width on tablets and full width on mobile.</p>
+        </div>
+        <div class="col-12 col-md-6">
+            <p>This column also takes up half the width on tablets and full width on mobile.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
