@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+
+    /* setup colors for light and dark mode + green buttons */
+    /* 
+        default colors:
+            - main lightest for backgrond
+            - main dark for headings / paragraphs
+            - main med for sub headings
+            - dark green for button
+            
+        dark mode colors (later):
+            - nav background = main dark
+            - Heading text / paragraphs = main lightest
+            - sub headsings = main-light
+            - light green for buttons
+    /*
+
+    /* main colors */
+    --main-lightest: #ffffff; 
+    --main-light: #cccccc;
+    --main-med: #555555;
+    --main-dark: #3a3a4a;
+    
+    /* default light green, when we hover over buttons becomes darker */
+    --main-green-light: #36AF57;
+    --main-green-dark: #2B8C46;
+    
+
+    /* box colors for light and dark mode */
+    --box-light-background-light: #F1F1F1;
+    --box-background-dark: #cccccc;
+    
+    /* fonts */
+    
+    --main-font: Lato;
+    --heading-font-weight: 700;
+    --subheading-font-weight: 400;
+    --paragraph-font-weight: 300;
+
+}
+
+.body {
+    font: var(--main-font);
+}
+
+.body-container{
+    height: 5rem;
+   }
+
+.about-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+    background-color: rgba(54, 175, 87, 0.2);
+    color: var(--main-dark);
+    border-radius: 12px;
+    padding-top: 2rem;
+    margin: 1rem;
+}
+
+.about-content {
+    flex: 1;
+    max-width: 50%;
+}
+
+.about-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+.about-content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 1.5em;
+    text-align: start;
+}
+
+.cta-button {
+    padding: 0.75em 1.5em;
+    background-color: var(--main-green-dark);
+    color: var(--main-light);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--main-green-light);
+    color: var(--main-light);
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.about-image {
+    flex: 1;
+    position: relative;
+    max-width: 100%;
+    padding-left: 10px;
+    text-align: right;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 12px;
+}
+
+#team-section {
+    padding: 2em;
+}
+
+.team-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 1.5em;
+    text-align: center;
+    background-color: #00000003;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2em;
+    margin: 0 auto;
+}
+
+.card {
+    width: 100%;
+    background-color: var(--main);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Stack the elements vertically */
+    height: 100%; /* Ensure full height */
+    min-height: 450px; /* Adjust this based on your content */
+}
+
+.card-image {
+    padding: 20px 20px 0px 20px;
+}
+
+.card-image img {
+    width: 180px;
+    height: fit-content;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 10px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1; /* Grows to take available space, pushing the footer down */
+}
+
+.card-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+    font-weight: var(--heading-font-weight);
+    color: var(--main-dark);
+}
+
+.card-role {
+    font-size: 1.5em;
+    color: var(--main-dark);
+    margin: 0 auto;
+}
+
+.card-text {
+    padding-top: 1rem;
+    font-size: 1.2em;
+    color: var(--main-dark);
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.card-footer {
+    padding: 10px 20px;
+    color: var(--main-dark);
+    border-top: 1px solid var(--text); /* Adds a subtle line between the body and footer */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Space between elements inside the footer */
+}

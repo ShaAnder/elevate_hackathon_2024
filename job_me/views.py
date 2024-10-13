@@ -8,3 +8,5 @@ def home(request):
 def categories(request):
     return render(request, "job_me/categories.html")
 
+def about(request):
+    return render(request, "job_me/about.html")
