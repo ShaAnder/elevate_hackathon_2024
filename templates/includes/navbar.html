@@ -1,32 +1,37 @@
 {% load static %}
-<nav class="navbar navbar-expand-lg py-4 py-lg-0 shadow">
+
+<nav class="navbar navbar-expand-lg py-0 shadow">
 	<div class="container px-4">
-		<img src="{% static 'images/job-seeker.png' %}" alt="">
+		<img src="{% static 'images/logo.svg' %}" alt="Logo" class="img-fluid">
 		<button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#top-navbar" aria-controls="top-navbar">
-			<i class="bi bi-grid"></i>
+			<i class="bi bi-grid fs-3"></i>
 		</button>
-		<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-			<!-- Navbar content -->
+		<div class="offcanvas offcanvas-end" tabindex="-1" id="top-navbar" aria-labelledby="top-navbarLabel">
+
 			<button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#top-navbar" aria-controls="top-navbar">
-				<div class="d-flex justify-content-between p-3">
-					<img src="logo.png" alt="">
-					<i class="bi bi-grid"></i>
+				<div class="d-flex justify-content-between align-items-center p-2 border-bottom border-secondary">
+					<img src="{% static 'images/logo.svg' %}" alt="Logo" class="img-fluid">
+					<i class="bi bi-grid fs-3"></i>
 				</div>
+				
 			</button>
-			<ul class="navbar-nav ms-lg-auto p-4 p-lg-0">
-				<li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-          <a class="nav-link active" aria-current="page" href="#">Categories</a>
-        </li>
-				<li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-          <a class="nav-link active" aria-current="page" href="#">Top Questions</a>
-        </li>
-				<li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-          <a class="nav-link active" aria-current="page" href="#">Interview Sim</a>
-        </li>
-				<li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-          <a class="nav-link active" aria-current="page" href="#">About Us</a>
-        </li>
-			</ul>
+
+
+				<ul class="navbar-nav ms-lg-auto p-4 p-lg-0">
+					<li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
+						<a class="nav-link active" aria-current="page" href="#">Categories</a>
+					</li>
+					<li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
+						<a class="nav-link active" aria-current="page" href="#">Top Questions</a>
+					</li>
+					<li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
+						<a class="nav-link active" aria-current="page" href="#">Interview Sim</a>
+					</li>
+					<li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
+						<a class="nav-link active" aria-current="page" href="#">About Us</a>
+					</li>
+				</ul>
+
 		</div>
 	</div>
 </nav>
