@@ -2,38 +2,67 @@
 {% load crispy_forms_tags %}
 {% load allauth i18n %}
 {% block head_title %}
-    {% trans "Signup" %}
+    {% trans "Sign Up" %}
 {% endblock head_title %}
+
 {% block content %}
-<section class="py-2 mt-2 py-md-3 py-xl-4">  <!-- Reduced padding -->
+<section class="py-3 mt-3 py-md-5 py-xl-8">
     <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="mb-3">  <!-- Reduced bottom margin -->
-            <h2 class="display-6 fw-bold text-center">Sign up</h2>  <!-- Changed display size -->
-            <p class="text-center m-0">Already have an account? <a href="{{ login_url }}">Sign In</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-12 col-sm-8">  <!-- Adjusted column size -->
-          <div class="row gy-4 justify-content-center">  <!-- Reduced gap -->
+        <div class="row">
             <div class="col-12">
-              <form method="POST" action="{% url 'account_signup' %}">
-                {% csrf_token %}
-                <div class="row gy-2 overflow-hidden">  <!-- Reduced gap -->
-                    {{ form|crispy }}
-                  <div class="col-12">
-                    <div class="d-grid">
-                      <button class="btn btn-lg btn-dark rounded-0 fs-6" type="submit">{% trans "Sign Up" %}</button>  <!-- Adjusted button text -->
-                    </div>
-                  </div>
+                <div class="mb-5">
+                    <h2 class="display-5 fw-bold text-center">Sign up</h2>
+                    <p class="text-center m-0">Already have an account? <a href="{{ login_url }}">Sign in</a></p>
                 </div>
-              </form>
             </div>
-          </div>
         </div>
-      </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10 col-xl-8">
+                <div class="row gy-5 justify-content-center">
+                    <div class="col-12 col-lg-5">
+                        <form method="POST" action="{% url 'account_signup' %}">
+                            {% csrf_token %}
+                            <div class="row gy-3 overflow-hidden">
+                                {{ form|crispy }}
+                                <div class="col-12">
+                                    <div class="d-grid">
+                                        <button class="btn btn-lg btn-dark rounded-0 fs-6" type="submit">{% trans "Sign Up" %}</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Divider with "or" -->
+                    <div class="col-12 col-lg-2 d-flex align-items-center justify-content-center gap-3 flex-lg-column">
+                        <div class="bg-dark h-100 d-none d-lg-block" style="width: 1px; --bs-bg-opacity: .1;"></div>
+                        <div class="bg-dark w-100 d-lg-none" style="height: 1px; --bs-bg-opacity: .1;"></div>
+                        <div>or</div>
+                        <div class="bg-dark h-100 d-none d-lg-block" style="width: 1px; --bs-bg-opacity: .1;"></div>
+                        <div class="bg-dark w-100 d-lg-none" style="height: 1px; --bs-bg-opacity: .1;"></div>
+                    </div>
+
+                    <!-- Social Sign Up Section -->
+                    <div class="col-12 col-lg-5 d-flex align-items-center">
+                        <div class="d-flex gap-3 flex-column w-100">
+                            <a href="/accounts/google/login/?process=signup" class="btn bsb-btn-2xl btn-outline-dark rounded-0 d-flex align-items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google text-danger" viewBox="0 0 16 16">
+                                    <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z" />
+                                </svg>
+                                <span class="ms-2 fs-6 flex-grow-1">Continue with Google</span>
+                            </a>
+
+                            <a href="/accounts/github/login/?process=signup" class="btn bsb-btn-2xl btn-outline-dark rounded-0 d-flex align-items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github text-dark" viewBox="0 0 16 16">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.83-.01-1.5-2.01.44-2.43-.48-2.43-.48-.33-.84-.81-1.07-.81-1.07-.66-.45.05-.44.05-.44.73.05 1.11.75 1.11.75.65 1.11 1.71.79 2.12.6.07-.47.25-.79.45-.97-1.77-.2-3.62-.89-3.62-3.95 0-.87.31-1.58.82-2.14-.08-.2-.36-1.01.08-2.1 0 0 .67-.22 2.2.83a7.72 7.72 0 0 1 2.01-.27c.68 0 1.36.09 2.01.27 1.53-1.05 2.2-.83 2.2-.83.44 1.09.16 1.9.08 2.1.51.56.82 1.27.82 2.14 0 3.06-1.86 3.75-3.64 3.95.26.22.49.66.49 1.32 0 .96-.01 1.73-.01 1.96 0 .21.15.46.55.38C13.71 14.53 16 11.54 16 8c0-4.42-3.58-8-8-8z" />
+                                </svg>
+                                <span class="ms-2 fs-6 flex-grow-1">Continue with GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
+</section>
 {% endblock content %}

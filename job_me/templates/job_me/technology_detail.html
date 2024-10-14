@@ -2,32 +2,36 @@
 
 {% block content %}
 
+<div class="container mx-auto p-5">
+    <!-- Technology Details Section -->
+    <h2 class="text-3xl font-bold mb-4">{{ technology.name }}</h2>
+    <p class="mb-4">{{ technology.description }}</p>
 
-<h2>{{ technology.name }} - Technology Details</h2>
-<p>{{ technology.description }}</p>
-<img src="{{ technology.image.url }}" alt="{{ technology.name }}" style="width: 150px; height: 150px;">
+    <div class="space-y-6">
+        {% for module in modules %}
+            <div class="module bg-gray-100 p-4 rounded-md shadow-md">
+                <!-- Module Name -->
+                <h4 class="text-xl font-semibold mb-2">{{ module.name }}</h4>
 
-<h3>Modules</h3>
-{% for module in modules %}
-    <div class="module">
-        <h4>{{ module.name }}</h4>
-        
-        <h5>Topics</h5>
-        {% for topic in module.topics.all %}
-            <div class="topic">
-                <h6>{{ topic.name }}</h6>
-                
-                <h6>Questions</h6>
-                <ul>
-                    {% for question in topic.questions.all %}
-                        <li>{{ question.text }}</li>
+                <div class="space-y-4">
+                    {% for topic in module.topics.all %}
+                        <div class="topic bg-white p-3 rounded shadow">
+                            <!-- Topic Name -->
+                            <h6 class="text-lg font-semibold">{{ topic.name }}</h6>
+
+                            <!-- Questions within Topic -->
+                            <h6 class="text-md font-medium mt-2">Questions</h6>
+                            <ul class="list-disc list-inside pl-4">
+                                {% for question in topic.questions.all %}
+                                    <li class="text-gray-700">{{ question.text }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
                     {% endfor %}
-                </ul>
+                </div>
             </div>
         {% endfor %}
     </div>
-{% endfor %}
-
-
+</div>
 
 {% endblock %}
