@@ -1,10 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 /* Base Light Mode Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Lato, Arial, sans-serif;
     background-color: #f5f5f5;
     color: black;
     margin: 0;
     transition: background-color 0.5s, color 0.5s;
+}
+
+.home-cta-button {
+    padding: 0.75em 1.5em;
+    background-color: var(--main-green-dark);
+    color: var(--text);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.home-cta-button:hover {
+    background-color: var(--main-green-light);
+    color: var(--main-light);
+    text-decoration: none;
+}
+
+.home-team-content {
+    font-size: 2.5em;
+    margin-bottom: 1.5em;
+    text-align: center;
+    background-color: #00000003;
 }
 
 /* Dark Mode Styles */
@@ -164,3 +192,16 @@ body.dark-mode {
     background-color: #4e4e4e;
     color: white;
 }
+
+.home-section {
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.home-frontend-section {
+    display: flex;
+    justify-content: space-around;
+}
+
+
