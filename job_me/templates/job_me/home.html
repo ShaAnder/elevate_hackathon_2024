@@ -80,36 +80,4 @@
     </div>
 </div>
 
-<script>
-	function toggleDarkMode() {
-		document.body.classList.toggle('dark-mode');
-		let isDarkMode = document.body.classList.contains('dark-mode');
-		let iconSmall = document.getElementById('darkModeIconSmall');
-		let buttonSmall = document.getElementById('darkModeToggleSmall');
-		let iconLarge = document.getElementById('darkModeIconLarge');
-
-		if (isDarkMode) {
-			iconSmall.classList.replace('bi-moon', 'bi-sun');
-			iconLarge.classList.replace('bi-moon', 'bi-sun');
-			buttonSmall.innerHTML = 'Light Mode <i id="darkModeIconSmall" class="bi bi-sun"></i>';
-			localStorage.setItem('theme', 'dark');
-		} else {
-			iconSmall.classList.replace('bi-sun', 'bi-moon');
-			iconLarge.classList.replace('bi-sun', 'bi-moon');
-			buttonSmall.innerHTML = 'Dark Mode <i id="darkModeIconSmall" class="bi bi-moon"></i>';
-			localStorage.setItem('theme', 'light');  // Save preference
-		}
-	}
-
-	document.addEventListener('DOMContentLoaded', function() {
-		let savedTheme = localStorage.getItem('theme');
-		if (savedTheme === 'dark') {
-			document.body.classList.add('dark-mode');
-			document.getElementById('darkModeIconSmall').classList.replace('bi-moon', 'bi-sun');
-			document.getElementById('darkModeIconLarge').classList.replace('bi-moon', 'bi-sun');
-			document.getElementById('darkModeToggleSmall').innerHTML = 'Light Mode <i id="darkModeIconSmall" class="bi bi-sun"></i>';
-		}
-	});
-</script>
-
 {% endblock %}

@@ -1,0 +1,37 @@
+<!-- templates/your_app/category_list.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mx-auto p-5">
+    <h2 class="text-3xl font-bold mb-5">We are on the categories page</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+        {% for category in categories %}
+            <div class="category-card border rounded-lg p-4 mb-4">
+                <h3 class="text-2xl font-semibold">{{ category.name }}</h3>
+                <p>{{ category.description }}</p>
+                
+                <div class="technologies mt-4">
+                    {% for technology in category.technologies.all %}
+                    <div class="card dark mb-4">
+                        <img src="{{ technology.image.url }}" class="card-img-top" alt="{{ technology.name }}" style="width: 150px; height: 150px;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ technology.name }}</h5>
+                            <p class="card-text">{{ technology.description }}</p>
+                            <div class="cta-section flex justify-between items-center">
+                                <a href="{% url 'job_me:technology_detail' technology.id %}" class="btn btn-light">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <p>No technologies available for this category.</p>
+                    {% endfor %}
+                </div>
+            </div>
+        {% empty %}
+        <p>No categories available.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

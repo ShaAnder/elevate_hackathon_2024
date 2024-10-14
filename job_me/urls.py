@@ -5,7 +5,11 @@ app_name = "job_me"
 
 urlpatterns = [
     path("", views.home, name="home"),
-    path("categories/", views.categories, name="categories"),
     path("about/", views.about, name="about"),
-
+    path("categories/", views.category_list, name="categories"),
+    path(
+        "technologies/<int:technology_id>/",
+        views.technology_detail,
+        name="technology_detail",
+    ),
 ]

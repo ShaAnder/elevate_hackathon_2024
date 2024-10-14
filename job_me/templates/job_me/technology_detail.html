@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h2>{{ technology.name }} - Technology Details</h2>
+<p>{{ technology.description }}</p>
+<img src="{{ technology.image.url }}" alt="{{ technology.name }}" style="width: 150px; height: 150px;">
+
+<h3>Modules</h3>
+{% for module in modules %}
+    <div class="module">
+        <h4>{{ module.name }}</h4>
+        
+        <h5>Topics</h5>
+        {% for topic in module.topics.all %}
+            <div class="topic">
+                <h6>{{ topic.name }}</h6>
+                
+                <h6>Questions</h6>
+                <ul>
+                    {% for question in topic.questions.all %}
+                        <li>{{ question.text }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+{% endfor %}
+
+
+
+{% endblock %}
