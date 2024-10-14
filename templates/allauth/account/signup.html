@@ -5,27 +5,27 @@
     {% trans "Signup" %}
 {% endblock head_title %}
 {% block content %}
-<section class="py-3 mt-3 py-md-5 py-xl-8">
+<section class="py-2 mt-2 py-md-3 py-xl-4">  <!-- Reduced padding -->
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <div class="mb-5">
-            <h2 class="display-5 fw-bold text-center">Sign up</h2>
+          <div class="mb-3">  <!-- Reduced bottom margin -->
+            <h2 class="display-6 fw-bold text-center">Sign up</h2>  <!-- Changed display size -->
             <p class="text-center m-0">Already have an account? <a href="{{ login_url }}">Sign In</a></p>
           </div>
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class="col-12 col-lg-10 col-xl-8">
-          <div class="row gy-5 justify-content-center">
+        <div class="col-12 col-sm-8">  <!-- Adjusted column size -->
+          <div class="row gy-4 justify-content-center">  <!-- Reduced gap -->
             <div class="col-12">
               <form method="POST" action="{% url 'account_signup' %}">
                 {% csrf_token %}
-                <div class="row gy-3 overflow-hidden">
+                <div class="row gy-2 overflow-hidden">  <!-- Reduced gap -->
                     {{ form|crispy }}
                   <div class="col-12">
                     <div class="d-grid">
-                      <button class="btn btn-lg btn-dark rounded-0 fs-6" type="submit">{% trans "Sign In" %}</button>
+                      <button class="btn btn-lg btn-dark rounded-0 fs-6" type="submit">{% trans "Sign Up" %}</button>  <!-- Adjusted button text -->
                     </div>
                   </div>
                 </div>
