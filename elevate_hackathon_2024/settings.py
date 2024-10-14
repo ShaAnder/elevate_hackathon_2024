@@ -21,7 +21,7 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "job-me-c2269b1b44b0.herokuapp.com",
-    "8000-shaander-elevatehackath-uaa57pqvyrs.ws-eu116.gitpod.io"
+    "8000-shaander-elevatehackath-uaa57pqvyrs.ws-eu116.gitpod.io",
 ]
 
 
@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sites",
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
@@ -93,6 +94,10 @@ WSGI_APPLICATION = "elevate_hackathon_2024.wsgi.application"
 SITE_ID = 1
 LOGIN_REDIRECT_URL = "/"
 ACCOUNT_LOGOUT_REDIRECT = "/"
+ACCOUNT_EMAIL_VERIFICATION = "none"
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_EMAIL_REQUIRED = True
+SOCIALACCOUNT_EMAIL_VERIFICATION = "none"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
