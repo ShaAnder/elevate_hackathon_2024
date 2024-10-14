@@ -1,4 +1,11 @@
 {% load static %}
+
+{% block extacss %}
+<link rel="stylesheet" href="{% static 'css/nav.css' %}">	
+{% endblock %}
+	
+
+
 <nav class="navbar navbar-expand-lg py-0 shadow">
 	<div class="container px-5 py-1">
 		<a href="{% url 'job_me:home' %}">
@@ -86,7 +93,7 @@
 				</li>
 				{% else %}
 				<!-- Signup button inside Offcanvas Menu for small screens -->
-				<li class="ms-0 ms-sm-5 px-3 px-lg-0 py-1 py-lg-4 d-lg-none">
+				<li class="ms-0 ms-xl-5 px-3 px-lg-0 py-1 py-lg-4 d-lg-none">
 					<a
 						class="btn btn-dark rounded-0 custom-signup-btn w-100"
 						href="{% url 'account_signup' %}"
