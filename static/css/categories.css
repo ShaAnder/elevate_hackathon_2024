@@ -3,21 +3,22 @@
 
 .categories-container {
     padding: 20px;
-    max-width: 800px;
+    max-width: 600px;
     margin: auto;
 }
 
 
 /* Headings */
-h2 {
+.categories-h2 {
     font-weight:700;
     margin-bottom:20px;
     text-align: center;
     color: #3a3a4a;
+    font-size:22px;
 
 }
 
-h3 {
+.categories-h3 {
     font-size: 1.2em;
     margin-bottom: 10px;
     color: #555555;
@@ -26,13 +27,12 @@ h3 {
 
 }
 
-p{
+.categories-p{
     color: #3a3a4a;
-    background-color:#cccc;
     border-radius:9px;
      
 }
-/* Search form */
+
 form {
     display: flex;
     justify-content: center;
@@ -44,7 +44,7 @@ input[type="text"] {
     border: 1px solid #ccc;
     border-radius: 4px;
     flex: 1;
-    max-width: 200px;
+    max-width: 250px;
     margin-right: 10px;
 }
 
@@ -69,40 +69,59 @@ section {
     margin-bottom: 20px;
 }
 
-/* Content sections */
 .content-section {
-    background-color:#F1F1F1;
-    border-radius: 5px;
-    margin: 5px 0;
+    width: 90%;
+    height: 150px;
+    border: 2px solid black;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Media Queries */
 @media (min-width: 768px) {
     /* Styles for tablet screens */
-    .categories-container {
-        display: flex;             
-        flex-wrap: wrap;          
-        justify-content: space-between; 
+    .categories-container{
+        max-width:800px;
+    }
+        .categories-h3{
+            text-align:left;
+        }
+
+        .frontend-section, .backend-section,.misc-section {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .content-section {
+            width: 200px;
+            margin: 10px;
+            height: 150px;
+        }
+
+    .categories-h2 {
+        font-size: 28px;
     }
 
-    .content-section {
-        flex: 0 1 calc(33.33% - 10px);                 
-        margin: 5px;             
-        min-width: 200px;       
-        max-width: 300px;    
-    }
-
-    h2 {
-        font-size: 32px;
-    }
-
-    h3 {
+    .categories-h3 {
         font-size: 24px;
     }
-    p{
+    .categories-p{
         font-size:larger;
     }
     input[type="text"] {
-        max-width: 300px;
+        max-width: 350px;
     }
+}
+
+@media (min-width: 1024px) {
+.categories-container{
+    max-width:1050px;
+}
+
+.categories-form{
+    display:flex;
+    justify-content: end;
+}
 }
