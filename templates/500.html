@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/error.css' %}">
+{% endblock%}
+
+{% block content %}
+
+
+    <main class="errors" class="error-container">
+        <h1>This is Test</h1>
+        <p></p>
+        <a class="btn" href="/">Go back to Home</a>
+    </main>
+
+{% endblock content %}

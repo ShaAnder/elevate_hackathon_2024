@@ -8,3 +8,6 @@ urlpatterns = [
     path("", include("job_me.urls")),
     path("accounts/", include("allauth.urls")),
 ]
+
+handler404 = 'job_me.views.error_404'
+handler500 = 'job_me.views.error_500'
