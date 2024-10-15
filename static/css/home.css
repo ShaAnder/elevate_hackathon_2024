@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 /* Base Light Mode Styles */
+=======
+/* Base Light Mode Styles
+>>>>>>> f00fc6904d2c3326671dddabd13130e89284f902
 body {
     font-family: Lato, Arial, sans-serif;
     background-color: #f5f5f5;
@@ -9,6 +13,7 @@ body {
     transition: background-color 0.5s, color 0.5s;
 }
 
+<<<<<<< HEAD
 .home-cta-button {
     padding: 0.75em 1.5em;
     background-color: var(--main-green-dark);
@@ -37,138 +42,73 @@ body {
 
 /* Dark Mode Styles */
 body.dark-mode {
+=======
+ body.dark-mode {
+>>>>>>> f00fc6904d2c3326671dddabd13130e89284f902
     background-color: #2c2c2c;
     color: white;
+} 
+
+*/ 
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+
+    /* setup colors for light and dark mode + green buttons */
+    /* 
+        default colors:
+            - main lightest for backgrond
+            - main dark for headings / paragraphs
+            - main med for sub headings
+            - dark green for button
+            
+        dark mode colors (later):
+            - nav background = main dark
+            - Heading text / paragraphs = main lightest
+            - sub headsings = main-light
+            - light green for buttons
+    /*
+
+    /* main colors */
+    --main-lightest: #ffffff; 
+    --main-light: #cccccc;
+    --main-med: #555555;
+    --main-dark: #3a3a4a;
+    
+    /* default light green, when we hover over buttons becomes darker */
+    --main-green-light: #36AF57;
+    --main-green-dark: #2B8C46;
+    
+
+    /* box colors for light and dark mode */
+    --box-light-background-light: #F1F1F1;
+    --box-background-dark: #cccccc;
+    
+    /* fonts */
+    
+    --main-font: Lato;
+    --heading-font-weight: 700;
+    --subheading-font-weight: 400;
+    --paragraph-font-weight: 300;
+
 }
 
-/* Flex container for hero and mock interview sections */
-.hero-section-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2em;
-    background-color: rgba(54, 175, 87, 0.2);
-    color: var(--main-dark);
-    border-radius: 12px;
-    padding-top: 2rem;
-    margin: 1rem;
-    width: 100%; /* Ensures the section spans the full width */
+body {
+    font-family: var(--main-font);
 }
 
-/* Hero section styles */
-.hero {
-    flex: 2; /* Hero takes up more space compared to side divs */
-    text-align: center;
-    position: relative;
-}
 
+<<<<<<< HEAD
 .hero img {
     width: 100%;
     /* height: auto; */
     height: 35vh;
     object-fit: contain;
 }
+=======
+>>>>>>> f00fc6904d2c3326671dddabd13130e89284f902
 
-/* Animated text inside the hero section */
-.hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.2);
-    text-align: center;
-    color: white;
-    font-size: 15px;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    border-radius: 5px;
-    animation: zoomInAndMoveDown 6s ease forwards;
-}
-
-/* Animation Keyframes */
-@keyframes zoomInAndMoveDown {
-    0% {
-        transform: translate(-50%, -50%) scale(0.2); /* Start small and centered */
-    }
-    50% {
-        transform: translate(-50%, -50%) scale(1); /* Fully zoomed in and centered */
-    }
-    100% {
-        transform: translate(-50%, 100%) scale(1); /* Move down below the characters */
-    }
-}
-
-/* Mock Interview Section */
-.mock-interview-section {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.mock-interview {
-    border: 2px solid black;
-    width: 200px;
-    height: 300px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 18px;
-    padding: 10px;
-    border-radius: 8px;
-    background-color: #f5f5f5;
-    transition: background-color 0.3s, transform 0.3s;
-    cursor: pointer;
-}
-
-.mock-interview:hover {
-    background-color: #e0e0e0;
-    transform: scale(1.05); /* Slight zoom effect on hover */
-}
-
-.mock-interview p {
-    font-size: 18px;
-    margin-top: 10px;
-}
-
-.mock-interview-image {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    max-height: 150px;
-    border-radius: 5px;
-}
-
-/* Tooltip styling for hover on mock-interview-link */
-.mock-interview-link {
-    position: relative;
-    text-decoration: none; /* Remove underline */
-}
-
-.mock-interview-link::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    left: 50%;
-    bottom: 110%; /* Adjust tooltip position */
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    white-space: nowrap;
-    font-size: 14px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.mock-interview-link:hover::after {
-    opacity: 1;
-    visibility: visible;
-}
 
 /* Dark Mode Toggle Button */
 .dark-mode-toggle {
