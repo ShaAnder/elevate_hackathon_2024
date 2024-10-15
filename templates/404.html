@@ -1,19 +1,74 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_css %}
+<!-- {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/error.css' %}">
-{% endblock%}
+{% endblock%} -->
 
 {% block content %}
 
 
     <main class="errors" >
     <div class="error-container">
-        <h1>Oops! Page Not Found</h1>
+        <h1 class="error-h1">Oops! Page Not Found</h1>
         <p>We couldn't find the page you were looking for.</p>
         <a class="btn" href="/">Go back to Home</a>
         </div>
     </main>
 
+    
+
+    
+<style>
+.errors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  
+}
+.error-container {
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 40px 20px;
+    max-width: 600px;
+    margin: 100px auto; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+    margin:auto;
+}
+
+
+.error-container h1 {
+    font-size:32px;
+    /* color:#3a3a4a; */
+    color: #3a3a4a;
+    margin-bottom: 10px;
+    font-weight:700;
+}
+
+.error-container p {
+    font-size:20px;
+    margin-bottom: 20px;
+    color:#3a3a4a;
+    font-weight:400;
+}
+
+
+.error-container .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color:#36AF57;;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+
+.error-container .btn:hover {
+    background-color:#2B8C46;
+} 
+
+</style>
 {% endblock content %}
