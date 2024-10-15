@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+/* styles for 404 error page */
+.errors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  
+}
+.error-container {
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 40px 20px;
+    max-width: 600px;
+    margin: 100px auto; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+    margin:auto;
+}
+
+
+.error-container h1 {
+    font-size:32px;
+    /* color:#3a3a4a; */
+    color:red;
+    margin-bottom: 10px;
+    font-weight:700;
+}
+
+.error-container p {
+    font-size:20px;
+    margin-bottom: 20px;
+    color:#3a3a4a;
+    font-weight:400;
+}
+
+
+.error-container .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color:#36AF57;;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+
+.error-container .btn:hover {
+    background-color:#2B8C46;
+}
+
+/* styles for 500 error page */
+
