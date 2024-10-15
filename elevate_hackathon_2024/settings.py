@@ -20,7 +20,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
-    "job-me-c2269b1b44b0.herokuapp.com",
+    "job-me-bc754484e6f7.herokuapp.com",
     "8000-shaander-elevatehackath-uaa57pqvyrs.ws-eu116.gitpod.io",
 ]
 
