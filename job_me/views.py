@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.http import HttpResponse
 
 def home(request):
     return render(request, "job_me/home.html")
@@ -19,3 +19,6 @@ def custom_404(request, exception):
 
 def custom_500(request):
     return render(request, '500.html', status=500)
+
+def trigger_500_error(request):
+    raise Exception("This is a test 500 error.")
