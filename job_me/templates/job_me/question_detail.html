@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="col-md-4">
 			<!-- Sidebar with a list of related questions -->
-			<h5 class="fw-bold">Related Questions</h5>
+			<h5 class="fw-bold">{{ technology.name }}</h5>
 			<ul class="list-group">
 				{% for related_question in questions %}
 				<li class="list-group-item">
@@ -42,13 +42,21 @@
 
 			<!-- Action buttons to mark knowledge status -->
 			<div class="mt-4">
-				<form action="#" method="POST">
-					{% csrf_token %}
-					<button class="btn btn-success">Good Knowledge</button>
-					<button class="btn btn-warning">Need to Repeat</button>
-					<button class="btn btn-danger">Bad Knowledge</button>
-				</form>
+				<button onclick="updateKnowledgeStatus('good')" class="btn btn-success">
+					Good Knowledge
+				</button>
+				<button
+					onclick="updateKnowledgeStatus('repeat')"
+					class="btn btn-warning"
+				>
+					Need to Repeat
+				</button>
+				<button onclick="updateKnowledgeStatus('bad')" class="btn btn-danger">
+					Bad Knowledge
+				</button>
 			</div>
+			<!-- Message Placeholder -->
+			<div id="status-message" class="mt-2" style="display: none"></div>
 		</div>
 	</div>
 </div>
@@ -59,13 +67,34 @@
 		.addEventListener('click', function () {
 			const answerDiv = document.getElementById('answer')
 			if (answerDiv.style.display === 'none') {
-				answerDiv.style.display = 'block' // Show the answer
-				this.textContent = 'Hide Answer' // Change button text
+				answerDiv.style.display = 'block'
+				this.textContent = 'Hide Answer'
 			} else {
-				answerDiv.style.display = 'none' // Hide the answer
-				this.textContent = 'Show Answer' // Reset button text
+				answerDiv.style.display = 'none'
+				this.textContent = 'Show Answer'
 			}
 		})
+
+	function updateKnowledgeStatus(status) {
+		fetch("{% url 'job_me:update_knowledge_status' question.id %}", {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				'X-CSRFToken': '{{ csrf_token }}',
+			},
+			body: JSON.stringify({ status: status }),
+		}).then(response => {
+			const messageDiv = document.getElementById('status-message')
+			if (response.ok) {
+				messageDiv.textContent = 'Status updated successfully!'
+				messageDiv.style.color = 'green'
+			} else {
+				messageDiv.textContent = 'Failed to update status.'
+				messageDiv.style.color = 'red'
+			}
+			messageDiv.style.display = 'block'
+		})
+	}
 </script>
 
 {% endblock %}

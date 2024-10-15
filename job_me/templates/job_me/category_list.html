@@ -1,5 +1,4 @@
-{% extends 'base.html' %} {% block content %}
-
+{% extends 'base.html' %} {% load custom_filters %} {% block content %}
 <div class="container my-5">
 	<div class="row justify-content-center">
 		<div class="col-12 col-lg-10 col-xl-8">
@@ -58,39 +57,19 @@
 								</div>
 								<div
 									class="position-relative d-flex justify-content-center align-items-center"
-									style="width: 80px; height: 80px"
+									style="width: 150px; height: 150px"
 								>
-									<svg
-										class="rotate-270"
-										style="transform: rotate(-90deg); width: 80px; height: 80px"
-									>
-										<circle
-											cx="40"
-											cy="40"
-											r="32"
-											stroke="currentColor"
-											stroke-width="12"
-											fill="transparent"
-											class="text-white"
-										></circle>
-										<circle
-											cx="40"
-											cy="40"
-											r="32"
-											stroke="currentColor"
-											stroke-width="12"
-											fill="transparent"
-											stroke-dasharray="201.06192982974676"
-											stroke-dashoffset="201.06192982974676"
-											stroke-linecap="round"
-											class="text-success"
-										></circle>
-									</svg>
-									<span
-										class="position-absolute font-weight-bold"
-										style="font-size: 1.25rem"
-										>0</span
-									>
+									<div class="progress-circle blue">
+										<span class="progress-circle-left">
+											<span class="progress-circle-bar"> </span>
+										</span>
+										<span class="progress-circle-right">
+											<span class="progress-circle-bar"> </span>
+										</span>
+										<div class="progress-circle-value">
+											{{ user_progress_dict|get_item:technology.id|default:0 }}%
+										</div>
+									</div>
 								</div>
 							</article>
 						</a>

@@ -23,4 +23,14 @@ urlpatterns = [
         views.redirect_to_first_question_from_topic,
         name="redirect_to_first_question_topic",
     ),
+    path(
+        "update_knowledge_status/<int:question_id>/",
+        views.update_knowledge_status,
+        name="update_knowledge_status",
+    ),
+    path(
+        "technology/<int:technology_id>/calculate_progress/",
+        views.calculate_user_progress,
+        name="calculate_user_progress",
+    ),
 ]

@@ -1,71 +1,79 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <div class="container">
-    <div class="row justify-content-center"> 
-        <div class="col-12 col-lg-10 col-xl-8"> 
-            <div class="d-flex flex-column align-items-md-start align-items-center my-5">
-                <!-- Technology Title and Progress Bar -->
-                <div class="text-4xl font-bold mb-6 d-flex flex-column gap-3 w-100">
-                    <h2 class="display-4 fw-bold">{{ technology.name }}</h2>
-                    <div class="w-50 d-flex align-items-center mb-3">
-                        <span class="fs-5">Progress&nbsp;&nbsp;</span>
-                        <div class="w-100">
-                            <div class="progress bg-light border" style="height: 10px">
-                                <div
-                                    class="progress-bar bg-success"
-                                    role="progressbar"
-                                    style="width: {{ technology.progress_percentage }}%"
-                                    aria-valuenow="{{ technology.progress_percentage }}"
-                                    aria-valuemin="0"
-                                    aria-valuemax="100"
-                                ></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+	<div class="row justify-content-center">
+		<div class="col-12 col-lg-10 col-xl-8">
+			<div
+				class="d-flex flex-column align-items-md-start align-items-center my-5"
+			>
+				<!-- Technology Title and Progress Bar -->
+				<div class="text-4xl font-bold mb-6 d-flex flex-column gap-3 w-100">
+					<h2 class="display-4 fw-bold">{{ technology.name }}</h2>
+					<div class="w-50 d-flex align-items-center mb-3">
+						<span class="fs-5">Progress&nbsp;&nbsp;</span>
+						<div class="w-100">
+							<div class="progress bg-light border" style="height: 10px">
+								<div
+									class="progress-bar bg-success"
+									role="progressbar"
+									style="width: {{ user_progress.progress_percentage|default:0 }}%"
+									aria-valuenow="{{ user_progress.progress_percentage|default:0 }}"
+									aria-valuemin="0"
+									aria-valuemax="100"
+								></div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-                <!-- Technology Description -->
-                <div class="mb-6 w-100">
-                    <p>{{ technology.description }}</p>
-                </div>
+				<!-- Technology Description -->
+				<div class="mb-6 w-100">
+					<p>{{ technology.description }}</p>
+				</div>
 
-                <!-- Modules, Topics, Questions -->
-                <div class="w-100">
-                    {% for module in modules %}
-                    <!-- Module Header -->
-                    <div class="mb-4">
-                        <div class="mb-3 border-bottom pb-1">
-                            <div class="my-2 fw-bold">
-                                <a href="{% url 'job_me:redirect_to_first_question_module' module_id=module.id %}" class="d-flex module-link">
-                                    <span class="fs-4">{{ forloop.counter }}.</span>
-                                    
-                                    <h3 class="mb-0 ms-2">{{ module.title }}</h3>
-                                </a>
-                            </div>
-                        </div>
+				<!-- Modules, Topics, Questions -->
+				<div class="w-100">
+					{% for module in modules %}
+					<!-- Module Header -->
+					<div class="mb-4">
+						<div class="mb-3 border-bottom pb-1">
+							<div class="my-2 fw-bold">
+								<a
+									href="{% url 'job_me:redirect_to_first_question_module' module_id=module.id %}"
+									class="d-flex module-link"
+								>
+									<span class="fs-4">{{ forloop.counter }}.</span>
 
-                        {% for topic in module.topics.all %}
-                        <div class="ms-4 my-2 fs-5">
-                            <div class="d-flex">
-                                <span class="me-2">{{ forloop.parentloop.counter }}.{{ forloop.counter }}</span>
-                                <div class="w-100">
-                                    <div class="w-fit">
-                                        <a href="{% url 'job_me:redirect_to_first_question_topic' topic_id=topic.id %}" class="module-link">
-                                            <span>{{ topic.title }}</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {% empty %}
-                        <p class="ml-4">No topics available for this module.</p>
-                        {% endfor %}
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div>
+									<h3 class="mb-0 ms-2">{{ module.title }}</h3>
+								</a>
+							</div>
+						</div>
+
+						{% for topic in module.topics.all %}
+						<div class="ms-4 my-2 fs-5">
+							<div class="d-flex">
+								<span class="me-2"
+									>{{ forloop.parentloop.counter }}.{{ forloop.counter }}</span
+								>
+								<div class="w-100">
+									<div class="w-fit">
+										<a
+											href="{% url 'job_me:redirect_to_first_question_topic' topic_id=topic.id %}"
+											class="module-link"
+										>
+											<span>{{ topic.title }}</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						{% empty %}
+						<p class="ml-4">No topics available for this module.</p>
+						{% endfor %}
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 {% endblock %}

@@ -82,7 +82,7 @@ class UserQuestionKnowledge(models.Model):
         unique_together = ("user", "question")
 
     def __str__(self):
-        return f"{self.user.username} - {self.question.title} - {self.knowledge_status}"
+        return f"{self.user} - {self.question.title} - {self.knowledge_status}"
 
 
 class UserTechnologyProgress(models.Model):
@@ -91,11 +91,13 @@ class UserTechnologyProgress(models.Model):
     progress_percentage = models.IntegerField(
         default=0, validators=[MinValueValidator(0), MaxValueValidator(100)]
     )
+    last_updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.user.username} - {self.technology.name} - {self.progress_percentage}%"
+        return f"{self.user} - {self.technology.name} - {self.progress_percentage}%"
 
     def calculate_progress(self):
+
         modules = self.technology.modules.all()
         topics = Topic.objects.filter(module__in=modules)
         total_questions = Question.objects.filter(topic__in=topics).count()
@@ -109,22 +111,3 @@ class UserTechnologyProgress(models.Model):
             self.progress_percentage = 0
 
         self.save()
-
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
-        self.calculate_progress()
-
-
-@receiver(post_save, sender=UserQuestionKnowledge)
-def update_user_progress(sender, instance, **kwargs):
-    try:
-        progress_record = UserTechnologyProgress.objects.get(
-            user=instance.user, technology=instance.question.topic.module.technology
-        )
-        progress_record.calculate_progress()
-    except UserTechnologyProgress.DoesNotExist:
-        UserTechnologyProgress.objects.create(
-            user=instance.user,
-            technology=instance.question.topic.module.technology,
-            progress_percentage=0,
-        )
