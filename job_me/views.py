@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Category, Technology, Topic
+from .models import Category, Technology, Module
 
 
 def home(request):
@@ -20,13 +20,14 @@ def category_list(request):
 
 
 def technology_detail(request, technology_id):
+
     technology = get_object_or_404(Technology, id=technology_id)
 
-    # Get all modules related to this technology
-    modules = technology.modules.all()
+    modules = Module.objects.filter(technology=technology).prefetch_related("topics")
 
-    return render(
-        request,
-        "job_me/technology_detail.html",
-        {"technology": technology, "modules": modules},
-    )
+    context = {
+        "technology": technology,
+        "modules": modules,
+    }
+
+    return render(request, "job_me/technology_detail.html", context)

@@ -1,37 +1,62 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<div class="container mx-auto p-5">
-    <!-- Technology Details Section -->
-    <h2 class="text-3xl font-bold mb-4">{{ technology.name }}</h2>
-    <p class="mb-4">{{ technology.description }}</p>
-
-    <div class="space-y-6">
-        {% for module in modules %}
-            <div class="module bg-gray-100 p-4 rounded-md shadow-md">
-                <!-- Module Name -->
-                <h4 class="text-xl font-semibold mb-2">{{ module.name }}</h4>
-
-                <div class="space-y-4">
-                    {% for topic in module.topics.all %}
-                        <div class="topic bg-white p-3 rounded shadow">
-                            <!-- Topic Name -->
-                            <h6 class="text-lg font-semibold">{{ topic.name }}</h6>
-
-                            <!-- Questions within Topic -->
-                            <h6 class="text-md font-medium mt-2">Questions</h6>
-                            <ul class="list-disc list-inside pl-4">
-                                {% for question in topic.questions.all %}
-                                    <li class="text-gray-700">{{ question.text }}</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    {% endfor %}
+<div class="d-flex flex-column align-items-md-start align-items-center my-5">
+    
+    <!-- Technology Title and Progress Bar -->
+    <div class="text-4xl font-bold mb-6 d-flex flex-column gap-3 w-100">
+        <h2>{{ technology.name }}</h2>
+        <div class="d-flex align-items-center gap-2 w-100">
+            <span>Progress</span>
+            <div class="w-100 max-w-[400px]">
+                <div class="progress bg-light" style="height: 8px;">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: {{ technology.progress_percentage }}%" aria-valuenow="{{ technology.progress_percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
             </div>
+            <span>{{ technology.progress_percentage }}%</span>
+        </div>
+    </div>
+    
+    <!-- Technology Description -->
+    <div class="mb-6 w-100">
+        <p>{{ technology.description }}</p>
+    </div>
+    
+    <!-- Modules, Topics, Questions -->
+    <div class="w-100">
+        {% for module in modules %}
+    <!-- Module Header -->
+    <div class="mb-4">
+        <div class="mb-3 border-bottom pb-1">
+            <div class="w-fit">
+                <a href="#" class="text-2xl font-semibold d-flex">
+                    <span class="mr-2">{{ forloop.counter }}.</span> <!-- Module Number -->
+                    <span>{{ module.title }}</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Topics within the Module -->
+        {% for topic in module.topics.all %}
+
+            <div class="ml-4">
+                <div class="d-flex">
+                    <span class="mr-2">{{ forloop.parentloop.counter }}.{{ forloop.counter }}</span> <!-- Topic Number -->
+                    <div class="w-full">
+                        <div class="w-fit">
+                            <a href="#" class="">
+                                <h4>{{ topic.title }}</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p class="ml-4">No topics available for this module.</p>
         {% endfor %}
     </div>
-</div>
+{% endfor %}
 
+    </div>
+</div>
 {% endblock %}

@@ -2,13 +2,13 @@
 {% load static %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
 {% endblock %}
 
 {% block content %}
 
 <!-- Flex container for hero and mock interview sections -->
-<div class="hero-section-wrapper">
+{% comment %} <div class="hero-section-wrapper">
     <!-- Mock Interviews Section (Left) -->
     <div class="mock-interview-section left">
         <a href="{% url 'account_signup' %}" class="mock-interview-link" data-tooltip="Click Here to Sign in">
@@ -37,46 +37,63 @@
             </div>
         </a>
     </div>
-</div>
+</div> {% endcomment %}
 
-<!-- Reinstated "Explore available tech stacks" section -->
-<div class="container">
-    <h2>Explore available tech stacks!</h2>
-    <div class="tech-stack">
-        <button>Python</button>
-        <button>Javascript</button>
-        <button>HTML</button>
-        <button>CSS</button>
-        <button>SQL</button>
-        <button>Django</button>
-        <button>Flask</button>
-        <button>Git</button>
-        <button>Docker</button>
-        <button>CompSci</button>
-        <button>Recruiter Questions</button>
-    </div>
-
-    <!-- View Top Questions Section -->
-    <h2>View top questions!</h2>
-
-    <!-- Card Carousel -->
-    <div class="carousel-nav">
-        <button>&larr;</button>
-        <div class="home-card-carousel">
-            <div class="home-card">
-                <h3>PYTHON</h3>
-                <p>This is a text blurb about Python</p>
+<main class="background" id="about">
+    <div class="hero-container"></div>
+        <div class="hero-section default-container">
+            <div class="hero-content">
+                <h1>job.me</h1>
+                <p>Get tech interview ready in a flash</p>
             </div>
-            <div class="home-card">
-                <h3>Javascript</h3>
-                <p>This is a text blurb about JS</p>
-            </div>
-            <div class="home-card">
-                <h3>SQL</h3>
-                <p>This is a text blurb about SQL</p>
-            </div>
+            <br>
+            <button class="cta-button hero-button">Get Interview Ready Now!</button>
         </div>
-        <button>&rarr;</button>
+        <div class="under"></div> 
+    <div>
+
+    <!-- Reinstated "Explore available tech stacks" section -->
+    <div class="tech-container default-container">
+        <h1>Explore our tech stacks on offer!</h1>
+        <div class="tech-stack">
+            <button><i class="fa-brands fa-python fa-xl"></i>Python</button>
+            <button><i class="fa-brands fa-js fa-xl"></i>Javascript</button>
+            <button><i class="fa-brands fa-html5 fa-xl"></i>HTML</button>
+            <button><i class="fa-brands fa-css3 fa-xl"></i>CSS</button>
+            <button><i class="fa-solid fa-database fa-xl"></i>SQL</button>
+            <button><i class="fa-solid fa-server fa-xl"></i>Django</button>
+            <button><i class="fa-solid fa-flask fa-xl"></i>Flask</button>
+            <button><i class="fa-solid fa-code-branch fa-xl"></i>Git</button>
+            <button><i class="fa-brands fa-docker fa-xl"></i>Docker</button>
+            <button><i class="fa-solid fa-computer fa-xl"></i>CompSci</button>
+            <button><i class="fa-solid fa-users fa-xl"></i>Recruiter Questions</button>
+        </div>
+    </div>
+    <!-- View Top Questions Section -->
+    <div class="top-container default-container">
+        <div class="top-container-content">
+            <h1>Review Top Questions!</h1>
+            <p>Quickly refresh your knowledge by checking out top questions
+            <div class="carousel-nav">
+                <button>&larr;</button>
+                <button>&rarr;</button>
+                <div class="home-card-carousel">
+                    <div class="home-card">
+                        <h3>PYTHON</h3>
+                        <p>This is a text blurb about Python</p>
+                    </div>
+                    <div class="home-card">
+                        <h3>Javascript</h3>
+                        <p>This is a text blurb about JS</p>
+                    </div>
+                    <div class="home-card">
+                        <h3>SQL</h3>
+                        <p>This is a text blurb about SQL</p>
+                    </div>
+                </div>                  
+            </div>
+            <div>
+        </div>
     </div>
 </div>
 
