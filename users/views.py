@@ -4,28 +4,27 @@ from django.contrib.auth import logout
 
 from .models import UserProfile
 from .forms import UserProfileForm
+from django.contrib import messages
 
 
 @login_required
 def profile(request):
-    """Display the user's profile."""
-    profile = get_object_or_404(UserProfile, user=request.user)
+    user_profile, created = UserProfile.objects.get_or_create(user=request.user)
 
     if request.method == "POST":
-        form = UserProfileForm(request.POST, instance=profile)
+        form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
         if form.is_valid():
             form.save()
+            messages.success(request, "Your profile has been updated successfully!")
             return redirect("profile")
     else:
-        form = UserProfileForm(instance=profile)
+        form = UserProfileForm(instance=user_profile)
 
-    template = "users/profile.html"
     context = {
         "form": form,
-        "on_profile_page": True,
     }
 
-    return render(request, template, context)
+    return render(request, "users/profile.html", context)
 
 
 def custom_logout(request):
