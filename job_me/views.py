@@ -10,10 +10,8 @@ def categories(request):
 def about(request):
     return render(request, "job_me/about.html")
 
-
 def error_404(request, exception):
     return render(request, '404.html', status=404)
-
 
 def error_500(request):
     return render(request, '500.html', status=500)

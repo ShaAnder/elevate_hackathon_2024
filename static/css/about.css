@@ -161,15 +161,116 @@
     background-color: var(--main-light);
 }
 
-.top-container {
-    width: 60%;
+/* Top questions Carousel*/
+
+.questions-carousel {
     margin-top: 2rem;
-    margin-left: 2rem;
-    font-size: 1rem;
-    line-height: 2.1;
-    margin-right: .5rem
 }
 
+.top-header h1 {
+    font-size: 3.5rem;
+    font-weight: var(--heading-font-weight);
+}
+
+.top-subheader-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-subheader p {
+    font-size: 2rem;
+    font-weight: var(--subheading-font-weight);
+    color: var(--main-med);
+    opacity: 0.8;
+    width: 80%;
+}
+
+.top-questions-cards {
+    height: 100%; 
+    display: flex;
+    overflow: hidden;
+}
+
+.top-questions-cards section {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.top-questions-card-content {
+    position: relative;
+    border-radius: 20px;
+    height: 400px;
+    margin-right: 3em;
+
+}
+
+.top-questions-card-content button {
+    margin-top: 1rem;
+    width: 365px;
+    height: 300px;
+    border-radius: 30px;
+    border: none;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.top-questions-card-content i {
+    font-size: 10em;
+    color: var(--main-green-dark);
+    opacity: 0.2;
+    position: relative;
+    top: 10%;
+    left: 20%;
+}
+
+.top-questions-card-content h1 {
+    font-weight: var(--heading-font-weight);
+    position: relative;
+    top: -10%;
+    margin-left: 1rem;
+    text-align: left;
+}
+
+.top-questions-card-content p {
+    font-size: larger;
+    opacity: 0.8;
+    font-weight: var(--heading-font-weight);
+    position: relative;
+    text-align: left;
+    margin-left: 1rem;
+    width: 80%;
+    margin-top: -30px;
+}
+
+.swiper-buttons {
+    position:relative;
+    justify-content: space-between;
+}
+
+.swiper-button {
+    margin:1rem;
+    border: none;
+    background-color: var;
+    font-size: 2rem;
+    font-weight: 700;
+    width: 4rem;
+    border-radius: 15px;
+    margin-right: 0%;
+    margin-left: 2rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.swiper-button:hover {
+    background-color: var(--main-green-dark);
+    color: var(--main-lightest)
+}
+
+.swiper-pagination {
+    margin-bottom: 2rem;
+    width: 10%
+}
 
 /* ABOUT PAGE */
 
