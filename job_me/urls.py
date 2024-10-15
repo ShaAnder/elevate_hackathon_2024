@@ -12,4 +12,15 @@ urlpatterns = [
         views.technology_detail,
         name="technology_detail",
     ),
+    path("questions/<int:question_id>/", views.question_detail, name="question_detail"),
+    path(
+        "modules/<int:module_id>/first-question/",
+        views.redirect_to_first_question_from_module,
+        name="redirect_to_first_question_module",
+    ),
+    path(
+        "topics/<int:topic_id>/first-question/",
+        views.redirect_to_first_question_from_topic,
+        name="redirect_to_first_question_topic",
+    ),
 ]

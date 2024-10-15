@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <!-- Sidebar with a list of related questions -->
+            <h5 class="fw-bold">Related Questions</h5>
+            <ul class="list-group">
+                {% for related_question in questions %}
+                    <li class="list-group-item">
+                        <a href="{% url 'job_me:question_detail' question_id=related_question.id %}" class="text-decoration-none">
+                            {{ related_question.title }}
+                        </a>
+                    </li>
+                {% empty %}
+                    <li class="list-group-item">No related questions available.</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="col-md-8">
+            <!-- Question Title -->
+            <h2 class="fw-bold">{{ question.title }}</h2>
+            <p><strong>Difficulty:</strong> {{ question.get_difficulty_display }}</p>
+
+            <!-- Question Content -->
+            <div class="mt-3">
+                <p>{{ question.content }}</p>
+            </div>
+
+            <!-- Action buttons to mark knowledge status -->
+            <div class="mt-4">
+                <form action="#" method="POST">
+                    {% csrf_token %}
+                    <button class="btn btn-success">Good Knowledge</button>
+                    <button class="btn btn-warning">Need to Repeat</button>
+                    <button class="btn btn-danger">Bad Knowledge</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

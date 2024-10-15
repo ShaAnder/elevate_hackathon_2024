@@ -1,52 +1,110 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
 
-{% block content %}
+<div class="container my-5">
+	<div class="row justify-content-center">
+		<div class="col-12 col-lg-10 col-xl-8">
+			<div
+				class="d-flex flex-column align-items-md-start align-items-center mb-5"
+			>
+				<h1 class="display-4 font-weight-bold mb-4 text-center text-md-left">
+					Master Your Interview Skills
+				</h1>
+				<h2 class="h5 text-center text-md-left">
+					Sharpen your tech knowledge, ace your interviews, and track your
+					growth.
+				</h2>
+				<a href="#" class="">View your progress</a>
+			</div>
 
-<div class="container my-5 ">
-    <div class="d-flex flex-column align-items-md-start align-items-center mb-5">
-        <h1 class="display-4 font-weight-bold mb-4 text-center text-md-left">Master Your Interview Skills</h1>
-        <h2 class="h5 text-center text-md-left">
-            Sharpen your tech knowledge, ace your interviews, and track your growth.
-            <a href="#" class="">View your progress</a>
-        </h2>
-    </div>
-    
-    <!-- Categories and Technologies Section -->
-    <div class="mb-5 w-100 position-relative">
-        {% for category in categories %}
-            <h2 class="h2 font-weight-bold mb-4">{{ category.name }}</h2>
-            <div class="row row-cols-1 row-cols-md-2 g-4">
-                {% for technology in category.technologies.all %}
-                <div class="col">  <!-- Each technology is in a responsive column -->
-                    <a href="{% url 'job_me:technology_detail' technology.id %}" class="text-decoration-none" aria-label="Explore questions on {{ technology.name }}">
-                        <article class="d-flex justify-content-between align-items-center bg-light rounded-lg p-3">
-                            <div class="d-flex gap-3">
-                                <div class="bg-dark text-white d-flex justify-content-center align-items-center rounded-lg p-2" style="width: 80px; height: 80px;">
-                                    <img class="img-fluid" src="{{ technology.image.url }}" alt="{{ technology.name }}">
-                                </div>
-                                <div class="d-flex flex-column justify-content-center">
-                                    <h3 class="font-weight-bold h5 mb-2">{{ technology.name }}</h3>
-                                    <p class="text-muted mb-0">{{ technology.description|truncatewords:10 }}</p>
-                                </div>
-                            </div>
-                            <div class="position-relative d-flex justify-content-center align-items-center" style="width: 80px; height: 80px;">
-                                <svg class="rotate-270" style="transform: rotate(-90deg); width: 80px; height: 80px;">
-                                    <circle cx="40" cy="40" r="32" stroke="currentColor" stroke-width="12" fill="transparent" class="text-white"></circle>
-                                    <circle cx="40" cy="40" r="32" stroke="currentColor" stroke-width="12" fill="transparent" stroke-dasharray="201.06192982974676" stroke-dashoffset="201.06192982974676" stroke-linecap="round" class="text-success"></circle>
-                                </svg>
-                                <span class="position-absolute font-weight-bold" style="font-size: 1.25rem;">0</span>
-                            </div>
-                        </article>
-                    </a>
-                </div>
-                {% empty %}
-                    <p>No technologies available for this category.</p>
-                {% endfor %}
-            </div>
-        {% empty %}
-            <p>No categories available.</p>
-        {% endfor %}
-    </div>
+			<div class="mb-5 w-100 position-relative">
+				{% for category in categories %}
+				<h2 class="h2 font-weight-bold mb-4">{{ category.name }}</h2>
+				<div class="row row-cols-1 row-cols-md-2 g-4">
+					{% for technology in category.technologies.all %}
+					<div class="col">
+						<a
+							href="{% url 'job_me:technology_detail' technology.id %}"
+							class="text-decoration-none"
+							aria-label="Explore questions on {{ technology.name }}"
+						>
+							<article
+								class="d-flex justify-content-between align-items-center bg-light rounded-lg p-3"
+							>
+								<div class="d-flex align-items-start gap-3">
+									<div
+										class="bg-dark text-white d-flex justify-content-center align-items-center rounded-lg p-2"
+										style="width: 80px; height: 80px; overflow: hidden"
+									>
+										<img
+											class="img-fluid"
+											src="{{ technology.image.url }}"
+											alt="{{ technology.name }}"
+											style="
+												max-width: 100%;
+												max-height: 100%;
+												object-fit: cover;
+											"
+										/>
+									</div>
+
+									<div class="d-flex flex-column justify-content-center">
+										<h3 class="font-weight-bold h5 mb-2">
+											{{ technology.name }}
+										</h3>
+										<p class="text-muted mb-0">
+											{{ technology.description|truncatewords:10 }}
+										</p>
+									</div>
+								</div>
+								<div
+									class="position-relative d-flex justify-content-center align-items-center"
+									style="width: 80px; height: 80px"
+								>
+									<svg
+										class="rotate-270"
+										style="transform: rotate(-90deg); width: 80px; height: 80px"
+									>
+										<circle
+											cx="40"
+											cy="40"
+											r="32"
+											stroke="currentColor"
+											stroke-width="12"
+											fill="transparent"
+											class="text-white"
+										></circle>
+										<circle
+											cx="40"
+											cy="40"
+											r="32"
+											stroke="currentColor"
+											stroke-width="12"
+											fill="transparent"
+											stroke-dasharray="201.06192982974676"
+											stroke-dashoffset="201.06192982974676"
+											stroke-linecap="round"
+											class="text-success"
+										></circle>
+									</svg>
+									<span
+										class="position-absolute font-weight-bold"
+										style="font-size: 1.25rem"
+										>0</span
+									>
+								</div>
+							</article>
+						</a>
+					</div>
+					{% empty %}
+					<p>No technologies available for this category.</p>
+					{% endfor %}
+				</div>
+				{% empty %}
+				<p>No categories available.</p>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
 </div>
 
 {% endblock %}

@@ -40,7 +40,138 @@
 
 /* HOME SECTION */
 
-.body-container {
+.hero-container {
+	height: 3rem;
+}
+
+.default-container {
+	display: block;
+	position: relative;
+	left: 15%;
+	justify-content: center;
+	flex-direction: column;
+	width: 70%;
+}
+
+.hero-section {
+	display: flex;
+
+	background-color: rgba(54, 175, 87, 0.2);
+	color: var(--main-dark);
+	padding: 2rem;
+	height: 20rem;
+	border-radius: 12px;
+}
+
+.hero-button {
+	display: flex;
+	width: 30%;
+	justify-content: center;
+}
+
+.under {
+	top: 12.5%;
+	position: absolute;
+	left: 15%;
+	justify-content: center;
+	width: 70%;
+	color: var(--main-dark);
+	padding: 3rem;
+	height: 20rem;
+	border-radius: 12px;
+	background: url('/static/images/computer-bg-hero.png') no-repeat;
+	opacity: 0.3;
+	width: 60%;
+}
+
+.hero-section h1 {
+	text-align: center;
+	color: var(--main-dark);
+	text-transform: uppercase;
+	font-size: 4rem;
+	font-weight: var(--heading-font-weight);
+}
+
+.hero-section p {
+	position: relative;
+	text-align: center;
+	color: var(--main-green-light);
+	text-transform: uppercase;
+	background-color: var(--main-lightest);
+	margin: 2rem;
+	margin-top: 3rem;
+	width: 70%;
+	left: 15%;
+	border-radius: 12px;
+	transform: rotate(-5deg);
+	font-size: 2rem;
+	font-weight: var(--subheading-font-weight);
+}
+
+.tech-container {
+	margin-top: 2rem;
+	background-image: linear-gradient(
+		to bottom,
+		var(--main-green-dark),
+		var(--main-green-light)
+	);
+	color: var(--main-dark);
+	padding: 2rem;
+	height: auto;
+	border-radius: 12px;
+}
+
+.tech-container h1 {
+	margin-left: 1rem;
+	color: white;
+	font-weight: 900;
+}
+
+.tech-container i {
+	color: white;
+	background-color: var(--main-green-light) !important;
+	text-align: center;
+	width: 2rem;
+	height: 2rem;
+	font-size: 1rem;
+	border-radius: 50%;
+	line-height: 2.1;
+	color: #ffffff !important;
+	margin-right: 0.5rem;
+}
+
+.tech-container button {
+	background-color: white;
+	border: none;
+	margin: 0.5rem;
+	border-radius: 30px;
+	width: auto;
+	min-width: 12.5%;
+	height: 2.5rem;
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-weight: 600;
+}
+
+.tech-container button:hover {
+	background-color: var(--main-light);
+}
+
+.top-container {
+	width: 60%;
+	margin-top: 2rem;
+	margin-left: 2rem;
+	font-size: 1rem;
+	line-height: 2.1;
+	margin-right: 0.5rem;
+}
+
+/* ABOUT PAGE */
+
+.about-container {
 	height: 5rem;
 }
 
@@ -126,16 +257,8 @@
 	margin: 0 auto;
 }
 
-.card {
-	/* width: 100%;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center; */
+.about-body {
 	width: 100%;
-
 	background-color: var(--main-lightest);
 	border: 1px solid #ddd;
 	border-radius: 8px;
@@ -143,9 +266,9 @@
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	text-align: center;
 	display: flex;
-	flex-direction: column; /* Stack the elements vertically */
-	height: 100%; /* Ensure full height */
-	min-height: 450px; /* Adjust this based on your content */
+	flex-direction: column;
+	height: 100%;
+	min-height: 450px;
 }
 
 .card-image {
@@ -213,7 +336,7 @@
 	margin-top: 10px;
 }
 
-.btn {
+.logo {
 	display: inline-block;
 	padding: 10px 20px;
 	color: var(--main-dark);
@@ -225,7 +348,7 @@
 	width: 6rem;
 }
 
-.btn:hover {
+.logo:hover {
 	background-color: var(--main-green-light);
 	color: var(--main-light);
 }
