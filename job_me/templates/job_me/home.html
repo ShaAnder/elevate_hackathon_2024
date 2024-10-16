@@ -3,41 +3,10 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/about.css' %}">
+
 {% endblock %}
 
 {% block content %}
-
-<!-- Flex container for hero and mock interview sections -->
-{% comment %} <div class="hero-section-wrapper">
-    <!-- Mock Interviews Section (Left) -->
-    <div class="mock-interview-section left">
-        <a href="{% url 'account_signup' %}" class="mock-interview-link" data-tooltip="Click Here to Sign in">
-            <div class="mock-interview">
-                <img src="{% static '/images/mock-interview.webp' %}" alt="Mock Interview Image" class="mock-interview-image">
-                <p>Mock Interviews</p>
-            </div>
-        </a>
-    </div>
-
-    <!-- Hero Section (Center) -->
-    <div class="hero mt-5">
-        <div class="hero-text" class="body-container">
-            <h1> Gig Getter </h1>
-            <p> The Only One-Stop-Shop You Need to Land Your Perfect Role </p>
-        </div>
-        <img src="{% static '/images/hero-image-1.webp' %}" alt="Hero Image" class="hero-image">
-    </div>
-
-    <!-- Track Your Progress Section (Right) -->
-    <div class="mock-interview-section right">
-        <a href="{% url 'account_signup' %}" class="mock-interview-link" data-tooltip="Click Here to Sign in">
-            <div class="mock-interview">
-                <img src="{% static '/images/track-your-progress now.webp' %}" alt="Track Your Progress Image" class="mock-interview-image">
-                <p>Track Your Progress</p>
-            </div>
-        </a>
-    </div>
-</div> {% endcomment %}
 
 <main class="background" id="about">
     <div class="hero-container"></div>
@@ -70,32 +39,138 @@
         </div>
     </div>
     <!-- View Top Questions Section -->
-    <div class="top-container default-container">
-        <div class="top-container-content">
-            <h1>Review Top Questions!</h1>
-            <p>Quickly refresh your knowledge by checking out top questions
-            <div class="carousel-nav">
-                <button>&larr;</button>
-                <button>&rarr;</button>
-                <div class="home-card-carousel">
-                    <div class="home-card">
-                        <h3>PYTHON</h3>
-                        <p>This is a text blurb about Python</p>
-                    </div>
-                    <div class="home-card">
-                        <h3>Javascript</h3>
-                        <p>This is a text blurb about JS</p>
-                    </div>
-                    <div class="home-card">
-                        <h3>SQL</h3>
-                        <p>This is a text blurb about SQL</p>
-                    </div>
-                </div>                  
+    <div class="questions-carousel  default-container">
+        <div class="swiper-wrapper content">
+            <div class="top-header"> 
+                <h1>Review Top Questions!</h1>
             </div>
-            <div>
+            <div class="top-subheader-container">
+                <div class="top-subheader">
+                    <h2 class="top-subheader-p">Refresh your knowledge by checking out top questions</h2>
+                </div>
+                <div class="swiper-buttons">
+                    <button class = "swiper-button-prev swiper-button">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button class= "swiper-button-next swiper-button">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="top-questions-container">
+                <div class="top-questions-carousel">
+                    <div class="top-questions-cards">
+                        <section class="slide-section">
+                            <div class="top-questions-card-content">
+                                <button>
+                                    <h1>Python</h1>
+                                    <p>Most relevant questions that reviewers ask in...</p>
+                                    <i class="fa-brands fa-python fa-xl"></i>
+                                </button>
+                            </div>
+                            <div class="top-questions-card-content">
+                                <button>
+                                    <h1>Javascript</h1>
+                                    <p>Review knowledge on the leading front end too...</p>
+                                    <i class="fa-brands fa-js fa-xl"></i>
+                                </button>
+                            </div>
+                            <div class="top-questions-card-content">
+                                <button>
+                                    <h1>HTML5</h1>
+                                    <p>Review knowledge on the leading front end too...</p>
+                                    <i class="fa-brands fa-html5 fa-xl"></i>
+                                </button>
+                            </div>             
+                        </section>
+                        <section class="slide-section">
+                            <div class="top-questions-card-content">
+                                <button>
+                                    <h1>CSS3</h1>
+                                    <p>Review knowledge on the leading front end too...</p>
+                                    <i class="fa-brands fa-css3 fa-xl"></i>
+                                </button>
+                            </div>
+                            <div class="top-questions-card-content">
+                                <button>
+                                    <h1>SQL</h1>
+                                    <p>Review knowledge on the leading front end too...</p>
+                                    <i class="fa-solid fa-database fa-xl"></i>
+                                </button>
+                            </div>
+                            <div class="top-questions-card-content">
+                                <button>
+                                    <h1>Django</h1>
+                                    <p>Review knowledge on the leading front end too...</p>
+                                    <i class="fa-solid fa-server fa-xl"></i>
+                                </button>
+                            </div>
+                        </section>
+                        <section class="slide-section">
+                            <div class="top-questions-card-content">
+                                <button>
+                                    <h1>Flask</h1>
+                                    <p>Review knowledge on the leading front end too...</p>
+                                    <i class="fa-solid fa-flask fa-xl"></i>
+                                </button>
+                            </div>
+                            <div class="top-questions-card-content">
+                                <button>
+                                    <h1>Git</h1>
+                                    <p>Review knowledge on the leading front end too...</p>
+                                    <i class="fa-solid fa-code-branch fa-xl"></i>
+                                </button>
+                            </div>
+                            <div class="top-questions-card-content">
+                                <button>
+                                    <h1>Docker</h1>
+                                    <p>Review knowledge on the leading front end too...</p>
+                                    <i class="fa-brands fa-docker fa-xl"></i>
+                                </button>
+                            </div>
+                        </section>
+                        <section class="slide-section">
+                            <div class="top-questions-card-content">
+                                <button>
+                                    <h1>Comp Sci</h1>
+                                    <p>Beginner to gradate level computer science questions...</p>
+                                    <i class="fa-solid fa-computer fa-xl"></i>
+                                </button>
+                            </div>
+                            <div class="top-questions-card-content">
+                                <button>
+                                    <h1>Recruiter</h1>
+                                    <p>Review knowledge on the leading front end too...</p>
+                                    <i class="fa-solid fa-users fa-xl"></i>   
+                                </button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-        <!-- Card Carousel -->
+    <div class="swiper-pagination"></div>
+     <div class="cta-button-container default-container">
+        <div class="cta-home-buttons">
+            <section>
+                <div class="cta-home-item">
+                    <button class="cta-home-button-right" id="solve-questions-button">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    <h1 id="cta-home-h1-top">Track your progress! Become the best!</h1>
+                </div>
+            </section>
+            <section>
+                <div class="cta-home-item">
+                    <button class="cta-home-button-left" id="track-your-progress-button">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    <h1 id="cta-home-h1-bottom">Train your knowledge with top questions!</h1>
+                </div>
+            </section>
+        </div>
+    </div>  
 </main>
 <script>
 	function toggleDarkMode() {
@@ -129,4 +204,5 @@
 	});
 </script>
 
+<script src="static/js/script.js"></script>
 {% endblock %}
