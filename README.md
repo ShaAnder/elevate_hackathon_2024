@@ -25,11 +25,14 @@ Built using modern technologies such as **Bootstrap** and **Django**, "Job Me" a
 
 ## [Features](#features)
 
-Key features of the project:
-
-- Feature 1
-- Feature 2
-- Feature 3
+- **Hero Section**: A landing page with a call-to-action encouraging users to prepare for tech interviews.
+- **Tech Stack Exploration**: Interactive buttons for exploring tech stacks like Python, JavaScript, Django, etc.
+- **Top Questions Carousel**: Swiper carousel displaying interview questions for different technologies.
+- **Dark Mode Toggle**: User-friendly dark mode feature, with preferences saved in local storage.
+- **Responsive Navigation**: Dynamic navbar optimized for all screen sizes with categories, top questions, and authentication options.
+- **Footer Section**: Informative footer with social media links, site navigation, and key page links like "About Us."
+- **Sign Up/Sign In Integration**: Custom social account signup form that integrates with various providers (e.g., Google) for seamless user authentication.
+- **Progress Tracking**: Track progress across tech categories with visual representations and percentage-based completion indicators for each technology.
 
 ## [Design](#design)
 
@@ -37,7 +40,7 @@ Key features of the project:
 
 ### **Navigation Bar:**
 
-- Located at the top of the page, the navigation bar includes links to different sections of the application, such as the home page and the about us page.
+- Located at the top of the page, the navigation bar includes buttons with links that bring Users each different sections of the application.
 
 ### UX
 
