@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="mb-4">Questions for {{ technology.name }}</h1>
+    
+    {% if questions %}
+    <ul class="list-group">
+        {% for question in questions %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="{% url 'job_me:question_detail' question_id=question.id %}">
+                {{ forloop.counter }}. {{ question.title }}
+            </a>
+            <span class="badge bg-secondary">{{ question.get_difficulty_display }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No questions are available for this technology yet.</p>
+    {% endif %}
+</div>
+{% endblock %}
