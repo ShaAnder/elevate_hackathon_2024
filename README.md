@@ -1,8 +1,8 @@
-# Job Me
+# [Job.Me - Technical Interview Trainer](https://job-me-bc754484e6f7.herokuapp.com/)
 
-![home page](static/images/read-me-images/homepage-update.png)
+[![home page](static/images/read-me-images/final-draft-hero-image.png)](https://job-me-bc754484e6f7.herokuapp.com/)
 
-As part of the **Code Institute's October 2024 Hackathon**, Team 3: The Gig Getters built from scratch a project called **"Job Me"**. This entirely free all-in-one platform was designed to provide Software Developers with a comprehensive suite of resources to help them secure their ideal roles. Tailored to developers of all technical backgrounds, skill levels, and experience, this one-stop-shop simplifies job hunting while offering:
+As part of the **Code Institute's October 2024 Hackathon**, Team 3: The Gig Getters built from scratch a project called **"Job.Me"**. This entirely free all-in-one platform was designed to provide Software Developers with a comprehensive suite of resources to help them secure their ideal roles. Tailored to developers of all technical backgrounds, skill levels, and experience, this one-stop-shop simplifies job hunting while offering:
 
 - Mock interview simulations
 - Progress tracking tools
@@ -11,7 +11,9 @@ As part of the **Code Institute's October 2024 Hackathon**, Team 3: The Gig Gett
 
 With full **CRUD (Create, Read, Update, Delete)** functionalities, users can easily manage profiles and track progress. It also includes interactive features like a **card carousel** for exploring top interview questions, helping developers deepen their skills in relevant tech stacks.
 
-Built using modern technologies such as **Bootstrap** and **Django**, "Job Me" also provides Users with a **responsive design**, **dark mode toggling**, and **mobile-friendly navigation**. Its dynamic interface ensures developers are well-prepared to pursue roles that align with their career goals.
+Built using modern technologies such as **Bootstrap** and **Django**, "Job.Me" also provides Users with a **responsive design**, **dark mode toggling**, and **mobile-friendly navigation**. Its dynamic interface ensures developers are well-prepared to pursue roles that align with their career goals.
+
+[Click Here to visit **Job.Me**](https://job-me-bc754484e6f7.herokuapp.com/)
 
 ## Table of Contents
 
@@ -130,7 +132,7 @@ To deploy the project on Heroku:
 
 ## [Testing](#testing)
 
-To ensure the reliability and functionality of the **Job Me** platform, several testing methods were implemented:
+To ensure the reliability and functionality of the **Job.Me** platform, several testing methods were implemented:
 
 - **Unit Testing**: Django’s built-in testing framework was used to test models, views, and forms. This ensured that individual components function as expected.
 - **Integration Testing**: Tested the integration of various components like the interview simulator, progress tracking, and authentication.
@@ -159,6 +161,7 @@ Below are noteworthy resources and inspirational materials:
 
 - [Code Academy Interview Simulator](https://www.codecademy.com/interview-simulator)
 - [Google Interview Warm Up](https://grow.google/certificates/interview-warmup/)
+- [icons8](https://icons8.com/)
 
 ## [Acknowledgements](#acknowledgements)
 
