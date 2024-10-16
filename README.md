@@ -33,6 +33,8 @@ Built using modern technologies such as **Bootstrap** and **Django**, "Job Me" a
 - **Footer Section**: Informative footer with social media links, site navigation, and key page links like "About Us."
 - **Sign Up/Sign In Integration**: Custom social account signup form that integrates with various providers (e.g., Google) for seamless user authentication.
 - **Progress Tracking**: Track progress across tech categories with visual representations and percentage-based completion indicators for each technology.
+- **Technology Overview**: Displays categories and technologies, with descriptions and progress tracking for each technology, allowing users to monitor their progress in mastering each tech skill.
+- **Question Detail Page**: View detailed questions related to specific technologies, with the ability to toggle the answer visibility and mark knowledge status as "Good," "Repeat," or "Bad."
 
 ## [Design](#design)
 
