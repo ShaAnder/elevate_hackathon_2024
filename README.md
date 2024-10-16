@@ -1,8 +1,8 @@
-## Job Me - Gig Getter
+## Job Me
 
-![Draft Placeholder hero image](/static/images/read-me-images/draft-hero-image.png)
+![home page](static/images/read-me-images/homepage-update.png)
 
-As part of the Code Institute's October Hackathon, Team 3: The Gig Getters built from scratch a project called **"Job Me - Gig Getter"**. This entirely free all-in-one platform was designed to provide Software Developers with a comprehensive suite of resources to help them secure their ideal roles. Tailored to developers of all technical backgrounds, skill levels, and experience, this one-stop-shop simplifies job hunting while offering:
+As part of the Code Institute's October Hackathon, Team 3: The Gig Getters built from scratch a project called **"Job Me"**. This entirely free all-in-one platform was designed to provide Software Developers with a comprehensive suite of resources to help them secure their ideal roles. Tailored to developers of all technical backgrounds, skill levels, and experience, this one-stop-shop simplifies job hunting while offering:
 
 - Mock interview simulations
 - Progress tracking tools
@@ -11,7 +11,7 @@ As part of the Code Institute's October Hackathon, Team 3: The Gig Getters built
 
 With full **CRUD (Create, Read, Update, Delete)** functionalities, users can easily manage profiles and track progress. It also includes interactive features like a **card carousel** for exploring top interview questions, helping developers deepen their skills in relevant tech stacks.
 
-Built using modern technologies such as **Bootstrap** and **Django**, "Job Me - Gig Getter" boasts a **responsive design**, **dark mode toggling**, and **mobile-friendly navigation**. Its dynamic interface ensures developers are well-prepared to pursue roles that align with their career goals.
+Built using modern technologies such as **Bootstrap** and **Django**, "Job Me" also provides Users with a **responsive design**, **dark mode toggling**, and **mobile-friendly navigation**. Its dynamic interface ensures developers are well-prepared to pursue roles that align with their career goals.
 
 ### Table of Contents
 - [Features](#features)
@@ -32,14 +32,43 @@ Key features of the project:
 
 ## [Color Scheme](#color-scheme)
 
-The color scheme used in the project:
+The following color scheme is used throughout the project, optimized for both light and dark modes.
 
-- Primary Color: 
-<!-- `#3498db` (Blue) -->
-- Secondary Color: 
-<!-- `#2ecc71` (Green) -->
-- Accent Color: 
-<!-- `#e74c3c` (Red) -->
+| Color Category        | Color Name         | Hex Code   | Usage                                      |
+|-----------------------|--------------------|------------|--------------------------------------------|
+| **Primary Color**      | Main Dark          | `#3a3a4a`  | Headings and paragraphs in light mode      |
+| **Secondary Color**    | Main Medium        | `#555555`  | Subheadings in dark mode                   |
+| **Accent Color**       | Main Green Light   | `#36AF57`  | Buttons (default)                          |
+| **Hover Accent Color** | Main Green Dark    | `#2B8C46`  | Buttons (hover)                            |
+|                       | Main Lightest      | `#ffffff`  | Background in light mode                   |
+|                       | Main Light         | `#cccccc`  | Subheadings in light mode                  |
+|                       | Box Light Background | `#F1F1F1` | Box background in light mode               |
+|                       | Box Background Dark | `#cccccc`  | Box background in dark mode                |               |
+
+### CSS Color Variables
+
+Below are the CSS variables defining the color scheme used in this project:
+
+```css
+:root {
+    --main-lightest: #ffffff; 
+    --main-light: #cccccc;
+    --main-med: #555555;
+    --main-dark: #3a3a4a;
+    
+    /* Button Colors */
+    --main-green-light: #36AF57;
+    --main-green-dark: #2B8C46;
+    
+    /* Box Colors */
+    --box-light-background-light: #F1F1F1;
+    --box-background-dark: #cccccc;
+}
+```
+
+[Click Here](https://github.com/ShaAnder/elevate_hackathon_2024/tree/main/static/css) to navigate to the folder containing the project's CSS files.
+
+
 
 ## [Technologies Used](#technologies-used)
 
