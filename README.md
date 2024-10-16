@@ -18,6 +18,8 @@ Built using modern technologies such as **Bootstrap** and **Django**, "Job Me" a
 - [Features](#features)
 - [Design](#design)
 - [Technologies Used](#technologies-used)
+- [Deployment](#deployment)
+- [Testing](#testing)
 - [Contributing](#contributing)
 - [Credits](#credits)
 - [Acknowledgements](#acknowledgements)
@@ -105,6 +107,35 @@ Below is a list of technologies and frameworks used in the project:
 - **Swiper.js**: For implementing the carousel in the "Top Questions" section.
 - **PostgreSQL** Used for storing user progress, questions, and other content.
 - **Git & GitHub**: Version control and code hosting for collaboration.
+
+## [Deployment](#deployment)
+
+To deploy the project on Heroku:
+
+1. Install the Heroku CLI and log in to your Heroku account.
+2. Use the provided script to configure your Heroku API key:
+
+    ```bash
+    ./heroku_setup.sh
+    ```
+
+    This script allows you to set the Heroku API key as an environment variable.
+3. Deploy your project using Git and Heroku CLI commands:
+
+    ```bash
+    git push heroku main
+    ```
+
+4. Ensure that required environment variables like `HEROKU_API_KEY` are properly configured.
+
+## [Testing](#testing)
+
+To ensure the reliability and functionality of the **Job Me** platform, several testing methods were implemented:
+
+- **Unit Testing**: Django’s built-in testing framework was used to test models, views, and forms. This ensured that individual components function as expected.
+- **Integration Testing**: Tested the integration of various components like the interview simulator, progress tracking, and authentication.
+- **Manual Testing**: Key features such as user registration, login, dark mode toggle, and CRUD operations were manually tested across different devices and browsers.
+- **Responsive Design Testing**: The platform was tested on different screen sizes to ensure mobile, tablet, and desktop responsiveness.
 
 ## [Contributing](#contributing)
 
