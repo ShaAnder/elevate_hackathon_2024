@@ -127,9 +127,9 @@ Below are noteworthy resources and inspirational materials:
 
 ## [Acknowledgements](#acknowledgements)
 
-Special thanks to Code Institute and the amazing people who give up their time to make hackathons happen. Thank you to the volunteers for providing us with the opportunity to suffer and succeed.
+Special thanks to the Code Institute Community Team and the amazing people on the Hackteam who give up their time to make it all happen.
 
-<!-- ![CI Volunteers Image]() -->
+![CI Volunteers Image](static/images/read-me-images/hackteem.png)
 
 ## [License](#license)
 
