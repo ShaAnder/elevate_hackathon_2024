@@ -11,5 +11,5 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-handler404 = "job_me.views.custom_404"
-handler500 = "job_me.views.custom_500"
+# handler404 = "job_me.views.custom_404"
+# handler500 = "job_me.views.custom_500"
