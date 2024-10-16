@@ -118,9 +118,7 @@ Guidelines for contributing to the project:
 
 ## [Credits](#credits)
 
-**Team 3: The Gig Getters** showed immense resilience when faced with the full range of challenges whcih can often come with participating in any hackathon. Obstacles outside of the team's control, such as having a smaller squad than anticipated and reduced capcacity due to injuries, may have slowed us down, but we rose to the challenge.
-
-'In sickness and in health, through good times and bad'  we had each other's backs and key individuals played vital roles in ensuring the product was delivered.
+**Team 3: The Gig Getters** demonstrated remarkable perseverance in the face of numerous challenges typical of a hackathon. Despite unforeseen setbacks, such as operating with fewer team members and managing reduced capacity due to injuries, we adapted and pushed forward. Through both adversity and success, the team remained united, with key individuals stepping up to ensure the successful delivery of our product. This commitment and teamwork were instrumental in overcoming obstacles and achieving our goals.
 
 Below are noteworthy resources and inspirational materials:
 
