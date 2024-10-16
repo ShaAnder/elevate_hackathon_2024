@@ -26,6 +26,10 @@ def about(request):
     return render(request, "job_me/about.html")
 
 
+def interview(request):
+    return render(request, "job_me/interview.html")
+
+
 def category_list(request):
     # Fetch all categories
     categories = Category.objects.prefetch_related(
@@ -91,39 +95,49 @@ def question_list(request, technology_id):
 
 
 def question_detail(request, question_id):
+    # Get the current question and related technology
     question = get_object_or_404(Question, id=question_id)
     technology = question.topic.module.technology
 
-    # Retrieve all questions related to the same technology
-    questions = Question.objects.filter(
-        topic__module__technology=question.topic.module.technology
-    )
-
-    # Retrieve the user's UserProfile instance
+    # Retrieve the user's UserProfile instance once
     user_profile = request.user.userprofile
 
     # Retrieve or create a UserQuestionKnowledge instance for the user and question
     user_question_knowledge, created = UserQuestionKnowledge.objects.get_or_create(
-        user=user_profile, question=question  # Ensure this is a UserProfile instance
+        user=user_profile, question=question
     )
 
+    # Handle form submission
     if request.method == "POST":
         form = UserQuestionKnowledgeForm(request.POST, instance=user_question_knowledge)
         if form.is_valid():
             form.save()
-            # After saving knowledge status, update user technology progress
-            progress_record, created = UserTechnologyProgress.objects.get_or_create(
-                user=user_profile,  # Ensure this is a UserProfile instance
-                technology=question.topic.module.technology,
+            # Update user technology progress after saving the knowledge status
+            progress_record, _ = UserTechnologyProgress.objects.get_or_create(
+                user=user_profile,
+                technology=technology,
             )
             progress_record.calculate_progress()  # Recalculate progress based on new knowledge status
             return redirect("job_me:question_detail", question_id=question_id)
     else:
         form = UserQuestionKnowledgeForm(instance=user_question_knowledge)
 
+    # Retrieve next and previous questions in a single query
+    questions = list(
+        Question.objects.filter(topic__module__technology=technology).order_by("id")
+    )
+    current_index = questions.index(question)
+
+    next_question = (
+        questions[current_index + 1] if current_index + 1 < len(questions) else None
+    )
+    previous_question = questions[current_index - 1] if current_index - 1 >= 0 else None
+
     context = {
         "question": question,
         "questions": questions,
+        "next_question": next_question,
+        "previous_question": previous_question,
         "technology": technology,
         "form": form,
     }
