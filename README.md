@@ -137,6 +137,9 @@ To ensure the reliability and functionality of the **Job Me** platform, several 
 - **Manual Testing**: Key features such as user registration, login, dark mode toggle, and CRUD operations were manually tested across different devices and browsers.
 - **Responsive Design Testing**: The platform was tested on different screen sizes to ensure mobile, tablet, and desktop responsiveness.
 
+For example, Lighthouse was used to test Performance, Accessibility, Best Practices and Search Engine Optimization.
+  ![Desktop Performance](static/images/read-me-images/lighthouse-desktop.png)
+
 ## [Contributing](#contributing)
 
 Guidelines for contributing to the project:
