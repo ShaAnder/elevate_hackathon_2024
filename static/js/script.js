@@ -38,3 +38,4 @@ leftArrow.addEventListener("click", function() {
     }
     }
 )
+
