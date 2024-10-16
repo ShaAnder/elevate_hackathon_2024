@@ -50,10 +50,10 @@
 .default-container {
     display: block;
     position: relative;
-    left: 15%;
+    left: 25%;
     justify-content: center;
     flex-direction: column;
-    width: 70%;
+    width: 50%;
 }
 
 .hero-section {
@@ -188,13 +188,15 @@
 .top-questions-cards {
     height: 100%; 
     display: flex;
+    position: relative;
     overflow: hidden;
+
 }
 
 .top-questions-cards section {
     flex-basis: 100%;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
 }
 
@@ -203,12 +205,11 @@
     border-radius: 20px;
     height: 400px;
     margin-right: 3em;
-
 }
 
 .top-questions-card-content button {
     margin-top: 1rem;
-    width: 365px;
+    width: 300px;
     height: 300px;
     border-radius: 30px;
     border: none;
@@ -271,6 +272,91 @@
     margin-bottom: 2rem;
     width: 10%
 }
+
+/*cta home buttons section */
+
+.cta-button-container {
+    margin-top: -3rem;
+    width: 70%;
+}
+
+.cta-home-buttons {
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.cta-home-item {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.cta-home-item h1 {
+    width: 80%;
+    margin: 1rem;
+    font-size: 2.5rem;
+    transition: all 0.5s;
+    text-align: center;
+}
+
+.cta-home-item #cta-home-h1-top {
+    background-color: var(--main-green-light);
+    padding: 15px;
+    border-radius: 25px;
+    color: var(--main-lightest);
+    
+}
+
+.cta-home-item #cta-home-h1-bottom {
+    background-color: var(--main-light);
+    padding: 15px;
+    border-radius: 25px;
+    color: var(--main-dark);
+}
+
+
+.cta-home-item button {
+    display: flex;
+    position: relative;
+    width: 150px;
+    border: none;
+    border-radius: 30px;
+    height: 80px;
+    font-size: 4rem;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+.cta-home-item button i {
+    opacity: 0.6;
+}
+
+.cta-home-item button:hover {
+    opacity: 1;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cta-home-item button:hover ~ h1 {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cta-home-item button:hover #cta-home-h1-bottom {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cta-home-button-right {
+    background-color: var(--main-green-dark);
+    color: var(--main-lightest);
+
+}
+
+
+
+
+
+
 
 /* ABOUT PAGE */
 
@@ -464,6 +550,18 @@
     font-weight: bold;
 }
 
+@media screen and (max-width: 1500px) {
+    .default-container {
+        left:15%;
+        width: 70%;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr); /* Display 2 cards per row */
+        gap: 1.5em;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .team-grid {
         grid-template-columns: repeat(2, 1fr); /* Display 2 cards per row */
@@ -473,6 +571,11 @@
 
 /* Responsive Styles for tablets (screens smaller than 768px) */
 @media screen and (max-width: 768px) {
+    .default-container {
+        left:5%;
+        width: 90%;
+    }
+
     .team-grid {
         grid-template-columns: repeat(1, 1fr);
         gap: 1.5em;
@@ -525,6 +628,11 @@
 
 /* Responsive Styles for mobile devices (screens smaller than 480px) */
 @media screen and (max-width: 480px) {
+    .default-container {
+
+        width: 100%;
+    }
+
     .about-section {
         padding: 1em; /* Reduce padding for smaller screens */
     }
