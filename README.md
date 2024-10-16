@@ -1,4 +1,4 @@
-## Job Me
+# Job Me
 
 ![home page](static/images/read-me-images/homepage-update.png)
 
@@ -13,7 +13,8 @@ With full **CRUD (Create, Read, Update, Delete)** functionalities, users can eas
 
 Built using modern technologies such as **Bootstrap** and **Django**, "Job Me" also provides Users with a **responsive design**, **dark mode toggling**, and **mobile-friendly navigation**. Its dynamic interface ensures developers are well-prepared to pursue roles that align with their career goals.
 
-### Table of Contents
+## Table of Contents
+
 - [Features](#features)
 - [Color Scheme](#color-scheme)
 - [Technologies Used](#technologies-used)
@@ -43,7 +44,7 @@ The following color scheme is used throughout the project, optimized for both li
 |                       | Main Lightest      | `#ffffff`  | Background in light mode                   |
 |                       | Main Light         | `#cccccc`  | Subheadings in light mode                  |
 |                       | Box Light Background | `#F1F1F1` | Box background in light mode               |
-|                       | Box Background Dark | `#cccccc`  | Box background in dark mode                |               |
+|                       | Box Background Dark | `#cccccc`  | Box background in dark mode                |
 
 ### CSS Color Variables
 
@@ -67,8 +68,6 @@ Below are the CSS variables defining the color scheme used in this project:
 ```
 
 [Click Here](https://github.com/ShaAnder/elevate_hackathon_2024/tree/main/static/css) to navigate to the folder containing the project's CSS files.
-
-
 
 ## [Technologies Used](#technologies-used)
 
@@ -98,9 +97,9 @@ Guidelines for contributing to the project:
 
 Below are noteworthy resources and inspirational materials:
 
-- 
-- 
--
+- a
+- b
+- c
 
 ## [Acknowledgements](#acknowledgements)
 
@@ -109,5 +108,3 @@ Special thanks to Code Institute and the amazing people who give up their time t
 ## [License](#license)
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
-
