@@ -38,13 +38,14 @@ Built using modern technologies such as **Bootstrap** and **Django**, "Job Me" a
 
 ## [Design](#design)
 
-### UI
+### UI and UX
 
-### **Navigation Bar:**
+ **Interactive Design**: The platform uses dynamic styling to create a responsive and visually engaging user experience.
 
-- Located at the top of the page, the navigation bar includes buttons with links that bring Users each different sections of the application.
-
-### UX
+- **Offcanvas Menu**: Users can access a sliding offcanvas menu for quick navigation, improving mobile and desktop usability.
+- **Progress Circles**: The platform visually displays user progress with animated circular progress indicators, enhancing user engagement.
+- **Profile Avatar**: Users can upload and view their profile avatars, with responsive design for profile pictures.
+- **Navigation Bar:**: Located at the top of the page, the navigation bar includes buttons with links that bring Users each different sections of the application.
 
 #### **Color Scheme**
 
