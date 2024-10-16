@@ -95,15 +95,16 @@ Below are the CSS variables defining the color scheme used in this project:
 
 Below is a list of technologies and frameworks used in the project:
 
-- Backend:
-  - Django
-
-- Frontend:
-
-  - HTML5
-  - CSS3
-  - JavaScript (ES6+)
-  - Bootstrap
+- **Django**: Backend framework used for managing the database, routing, and rendering templates.
+- **Python**: Used for backend development and logic.
+- **JavaScript**: Added interactivity to the frontend, including AJAX requests and dynamic UI elements.
+- **HTML5 & CSS3**: For structuring and styling the webpages.
+- **Bootstrap**: Used for responsive design, layout, and UI components like the offcanvas menu and carousel.
+- **Font Awesome**: Provides icons for the UI.
+- **Google Fonts (Lato)**: Custom font used across the platform.
+- **Swiper.js**: For implementing the carousel in the "Top Questions" section.
+- **PostgreSQL** Used for storing user progress, questions, and other content.
+- **Git & GitHub**: Version control and code hosting for collaboration.
 
 ## [Contributing](#contributing)
 
