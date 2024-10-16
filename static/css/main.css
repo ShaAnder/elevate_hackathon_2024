@@ -18,10 +18,14 @@
 }
 
 .offcanvas.offcanvas-start {
-	height: calc(100vh - 83px);
-	top: 83px;
+	height: calc(100vh - 90px);
+	top: 90px;
 }
-
+.offcanvas-visible {
+	transform: none !important;
+	visibility: visible !important;
+	display: block !important;
+}
 .offcanvas-backdrop {
 	background-color: transparent !important;
 }

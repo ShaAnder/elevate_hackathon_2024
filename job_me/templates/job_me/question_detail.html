@@ -1,46 +1,56 @@
-{% extends 'base.html' %} 
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <div class="container mt-5">
-    <a class="q-open d-none d-lg-inline-flex" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-        <i class="bi bi-arrow-right"></i>
-      </a>
+	<a
+		class="q-open d-none d-lg-inline-flex"
+		data-bs-toggle="offcanvas"
+		href="#offcanvasExample"
+		role="button"
+		aria-controls="offcanvasExample"
+	>
+		<i class="bi bi-arrow-right"></i>
+	</a>
 
 	<div class="row">
 		<div class="col-md-3">
-            
-              
-              <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-                <div class="offcanvas-header"> 
-                    <div class="row d-flex justify-between">
-                        <div class="">
-                            {{ technology.title }}
-                        </div>
-                        <div class="">
-                            <a type="button" class="q-open ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
-                                <i class="bi bi-arrow-left"></i>
-                              </a>
-                        </div>
-                    </div>
-                  
-                </div>
-                <div class="offcanvas-body">
-                  <div>
-                    Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-                  </div>
-                  <div class="dropdown mt-3">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                      Dropdown button
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+			<div
+				class="offcanvas offcanvas-start show offcanvas-visible"
+				tabindex="-1"
+				id="offcanvasExample"
+				aria-labelledby="offcanvasExampleLabel"
+			>
+				<div class="offcanvas-header">
+					<div class="d-flex justify-content-between align-items-center w-100">
+						<div>{{ technology.name }}</div>
+						<div>
+							<a
+								type="button"
+								class="q-open"
+								data-bs-dismiss="offcanvas"
+								aria-label="Close"
+							>
+								<i class="bi bi-arrow-left"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="offcanvas-body">
+					<ol class="">
+						{% for question in questions %}
+						<li class="">
+							<a
+								href="{% url 'job_me:question_detail' question.id %}"
+								class="text-decoration-none text-dark"
+							>
+								{{ question.title }}
+							</a>
+						</li>
+						{% empty %}
+						<li class="">No questions available.</li>
+						{% endfor %}
+					</ol>
+				</div>
+			</div>
 		</div>
 
 		<div class="col-md-8">
@@ -85,39 +95,67 @@
 </div>
 
 <script>
-	document
-		.getElementById('show-answer-btn')
-		.addEventListener('click', function () {
-			const answerDiv = document.getElementById('answer')
-			if (answerDiv.style.display === 'none') {
-				answerDiv.style.display = 'block'
-				this.textContent = 'Hide Answer'
-			} else {
-				answerDiv.style.display = 'none'
-				this.textContent = 'Show Answer'
-			}
-		})
+	document.addEventListener('DOMContentLoaded', function () {
+		// Show/hide answer functionality
+		const showAnswerButton = document.getElementById('show-answer-btn')
+		const answerDiv = document.getElementById('answer')
 
-	function updateKnowledgeStatus(status) {
-		fetch("{% url 'job_me:update_knowledge_status' question.id %}", {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-				'X-CSRFToken': '{{ csrf_token }}',
-			},
-			body: JSON.stringify({ status: status }),
-		}).then(response => {
-			const messageDiv = document.getElementById('status-message')
-			if (response.ok) {
-				messageDiv.textContent = 'Status updated successfully!'
-				messageDiv.style.color = 'green'
-			} else {
-				messageDiv.textContent = 'Failed to update status.'
-				messageDiv.style.color = 'red'
+		if (showAnswerButton) {
+			showAnswerButton.addEventListener('click', function () {
+				if (
+					answerDiv.style.display === 'none' ||
+					answerDiv.style.display === ''
+				) {
+					answerDiv.style.display = 'block'
+					this.textContent = 'Hide Answer'
+				} else {
+					answerDiv.style.display = 'none'
+					this.textContent = 'Show Answer'
+				}
+			})
+		}
+
+		// Update knowledge status functionality
+		function updateKnowledgeStatus(status) {
+			fetch("{% url 'job_me:update_knowledge_status' question.id %}", {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					'X-CSRFToken': '{{ csrf_token }}',
+				},
+				body: JSON.stringify({ status: status }),
+			}).then(response => {
+				const messageDiv = document.getElementById('status-message')
+				if (response.ok) {
+					messageDiv.textContent = 'Status updated successfully!'
+					messageDiv.style.color = 'green'
+				} else {
+					messageDiv.textContent = 'Failed to update status.'
+					messageDiv.style.color = 'red'
+				}
+				messageDiv.style.display = 'block'
+			})
+		}
+
+		// Offcanvas toggle visibility handling
+		const offcanvas = document.getElementById('offcanvasExample')
+		const openButton = document.querySelector('[data-bs-toggle="offcanvas"]')
+		const closeButton = document.querySelector('[data-bs-dismiss="offcanvas"]')
+
+		if (offcanvas) {
+			// Remove visibility class when the offcanvas is closed
+			offcanvas.addEventListener('hide.bs.offcanvas', function () {
+				offcanvas.classList.remove('offcanvas-visible')
+			})
+
+			// Add visibility class when the open button is clicked
+			if (openButton) {
+				openButton.addEventListener('click', function () {
+					offcanvas.classList.add('offcanvas-visible')
+				})
 			}
-			messageDiv.style.display = 'block'
-		})
-	}
+		}
+	})
 </script>
 
 {% endblock %}
