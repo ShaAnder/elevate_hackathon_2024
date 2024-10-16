@@ -421,3 +421,16 @@
     background-color: #4e4e4e;
     color: white;
 }
+
+.home-section {
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.home-frontend-section {
+    display: flex;
+    justify-content: space-around;
+}
+
+
