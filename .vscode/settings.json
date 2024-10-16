@@ -17,9 +17,9 @@
 // 	"terminal.integrated.gpuAcceleration": "canvas"
 // }
 {
-	// "[django-html]": {
-	// 	"editor.formatOnSave": false
-	// },
+	"[django-html]": {
+		"editor.formatOnSave": false
+	},
 	"emmet.includeLanguages": {
 		"django-html": "html"
 	}
