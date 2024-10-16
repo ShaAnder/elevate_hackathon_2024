@@ -26,6 +26,10 @@ def about(request):
     return render(request, "job_me/about.html")
 
 
+def interview(request):
+    return render(request, "job_me/interview.html")
+
+
 def category_list(request):
     # Fetch all categories
     categories = Category.objects.prefetch_related(
