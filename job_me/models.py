@@ -55,9 +55,8 @@ class Question(models.Model):
         ("ninja", "Ninja"),
     ]
 
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=255)
     topic = models.ForeignKey(Topic, related_name="questions", on_delete=models.CASCADE)
-    question = models.TextField(default="No question provided")
     answer = models.TextField(default="No answer provided")
     difficulty = models.CharField(max_length=10, choices=DIFFICULTY_CHOICES)
     created_at = models.DateTimeField(auto_now_add=True)

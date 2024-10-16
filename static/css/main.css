@@ -17,6 +17,35 @@
 	border-radius: 50%;
 }
 
+.offcanvas.offcanvas-start {
+	height: calc(100vh - 83px);
+	top: 83px;
+}
+
+.offcanvas-backdrop {
+	background-color: transparent !important;
+}
+
+.q-open {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	top: 10%;
+	position: relative;
+	background-color: white;
+	border-radius: 50%;
+	color: black;
+	text-decoration: none;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	transition: background-color 0.3s;
+}
+
+.q-open:hover {
+	opacity: 0.8;
+}
+
 .progress-circle {
 	width: 150px;
 	height: 150px;
@@ -148,7 +177,7 @@
 	}
 }
 @media only screen and (max-width: 990px) {
-	.progress {
+	.progress-circle {
 		margin-bottom: 20px;
 	}
 }

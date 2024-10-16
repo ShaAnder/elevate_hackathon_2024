@@ -1,6 +1,5 @@
 {% extends 'base.html' %} 
 {% load static %} 
-{% load custom_filters %}
 
 {% block content %}
 <div class="container my-5">
@@ -113,7 +112,6 @@
 								LinkedIn
 							</h6>
 							<span class="text-secondary">
-								
 								<a
 									href="{{ user_profile.linkedin }}"
 									class="text-secondary"
@@ -122,7 +120,6 @@
 								>
 									...{{ user_profile.linkedin|slice:"-15:" }}
 								</a>
-								
 							</span>
 						</li>
 					</ul>
@@ -197,42 +194,61 @@
 									<i class="material-icons text-info mr-2">learning</i>Progress
 								</h6>
 								{% for progress in tech_progress %}
-                    <small>{{ progress.technology.name }}</small>
-                    <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: {{ progress.progress_percentage }}%" 
-                             aria-valuenow="{{ progress.progress_percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                {% empty %}
-                    <small>No technology progress recorded.</small>
-                {% endfor %}
+								<small>{{ progress.technology.name }}</small>
+								<div class="progress mb-3" style="height: 5px">
+									<div
+										class="progress-bar bg-primary"
+										role="progressbar"
+										style="width: {{ progress.progress_percentage }}%"
+										aria-valuenow="{{ progress.progress_percentage }}"
+										aria-valuemin="0"
+										aria-valuemax="100"
+									></div>
+								</div>
 
-							
-						</div>
+								{% endfor %}
+							</div>
 						</div>
 					</div>
 					<div class="col-sm-6 mb-3">
 						<div class="card h-100">
-								<div class="card-body">
-										<h6 class="d-flex align-items-center mb-3">
-												<i class="material-icons text-info mr-2">badge</i>Badges
-										</h6>
-										<div class="row">
-												<div class="col-3 text-center">
-														<img src="{% static 'images/badge1.png' %}" alt="Badge 1" class="img-fluid">
-												</div>
-												<div class="col-3 text-center">
-														<img src="{% static 'images/badge2.png' %}" alt="Badge 2" class="img-fluid">
-												</div>
-												<div class="col-3 text-center">
-														<img src="{% static 'images/badge3.png' %}" alt="Badge 3" class="img-fluid">
-												</div>
-												<div class="col-3 text-center">
-														<img src="{% static 'images/badge4.png' %}" alt="Badge 4" class="img-fluid">
-												</div>
-										</div>
+							<div class="card-body">
+								<h6 class="d-flex align-items-center mb-3">
+									<i class="material-icons text-info mr-2">badge</i>Badges
+								</h6>
+								<div class="row">
+									<div class="col-3 text-center">
+										<img
+											src="{% static 'images/badge1.png' %}"
+											alt="Badge 1"
+											class="img-fluid"
+										/>
+									</div>
+									<div class="col-3 text-center">
+										<img
+											src="{% static 'images/badge2.png' %}"
+											alt="Badge 2"
+											class="img-fluid"
+										/>
+									</div>
+									<div class="col-3 text-center">
+										<img
+											src="{% static 'images/badge3.png' %}"
+											alt="Badge 3"
+											class="img-fluid"
+										/>
+									</div>
+									<div class="col-3 text-center">
+										<img
+											src="{% static 'images/badge4.png' %}"
+											alt="Badge 4"
+											class="img-fluid"
+										/>
+									</div>
 								</div>
+							</div>
 						</div>
-				</div>
+					</div>
 				</div>
 			</div>
 		</div>
