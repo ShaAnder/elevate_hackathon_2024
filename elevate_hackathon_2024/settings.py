@@ -21,7 +21,8 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "job-me-c2269b1b44b0.herokuapp.com",
-    "8000-shaander-elevatehackath-6m90ift8l4t.ws-eu116.gitpod.io"
+    "8000-shaander-elevatehackath-6m90ift8l4t.ws-eu116.gitpod.io",
+    "8000-shaander-elevatehackath-uaa57pqvyrs.ws-eu116.gitpod.io",
 ]
 
 
