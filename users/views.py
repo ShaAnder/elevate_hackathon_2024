@@ -4,28 +4,45 @@ from django.contrib.auth import logout
 
 from .models import UserProfile
 from .forms import UserProfileForm
+from django.contrib import messages
+from job_me.models import UserTechnologyProgress, Technology
 
 
 @login_required
 def profile(request):
-    """Display the user's profile."""
-    profile = get_object_or_404(UserProfile, user=request.user)
 
-    if request.method == "POST":
-        form = UserProfileForm(request.POST, instance=profile)
-        if form.is_valid():
-            form.save()
-            return redirect("profile")
-    else:
-        form = UserProfileForm(instance=profile)
+    user_profile, created = UserProfile.objects.get_or_create(user=request.user)
+    tech_progress = UserTechnologyProgress.objects.filter(user=user_profile)
+    technologies = Technology.objects.all()
 
-    template = "users/profile.html"
     context = {
-        "form": form,
-        "on_profile_page": True,
+        "user_profile": user_profile,
+        "tech_progress": tech_progress,
+        "technologies": technologies,
     }
 
-    return render(request, template, context)
+    return render(request, "users/profile.html", context)
+
+
+@login_required
+def update_profile(request):
+
+    user_profile = request.user.userprofile
+
+    if request.method == "POST":
+        form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Your profile has been updated successfully!")
+            return redirect("/profile")
+    else:
+        form = UserProfileForm(instance=user_profile)
+
+    return render(
+        request,
+        "users/profile_update.html",
+        {"form": form, "user_profile": user_profile},
+    )
 
 
 def custom_logout(request):

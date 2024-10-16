@@ -5,3 +5,8 @@
 .no-arrow::after {
 	display: none;
 }
+
+.navbar-cover {
+	background: url('../images/nav.svg') no-repeat center center;
+	background-size: cover;
+}
