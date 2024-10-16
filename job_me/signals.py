@@ -1,6 +1,16 @@
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from .models import UserQuestionKnowledge, UserTechnologyProgress
+from users.models import UserProfile
+from .models import UserQuestionKnowledge, UserTechnologyProgress, Technology
+
+
+@receiver(post_save, sender=UserProfile)
+def create_user_technology_progress(sender, instance, created, **kwargs):
+    if created:
+        # Get all technologies and create a progress entry for each
+        technologies = Technology.objects.all()
+        for tech in technologies:
+            UserTechnologyProgress.objects.create(user=instance, technology=tech)
 
 
 @receiver(post_save, sender=UserQuestionKnowledge)

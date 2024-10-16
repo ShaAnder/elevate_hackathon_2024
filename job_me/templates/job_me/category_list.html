@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% load custom_filters %} {% block content %}
 <div class="container my-5">
 	<div class="row justify-content-center">
-		<div class="col-12 col-lg-10 col-xl-8">
+		<div class="col-lg-11 col-md-12">
 			<div
 				class="d-flex flex-column align-items-md-start align-items-center mb-5"
 			>
@@ -15,23 +15,25 @@
 				<a href="#" class="">View your progress</a>
 			</div>
 
-			<div class="mb-5 w-100 position-relative">
+			<div class="mb-5 w-100">
 				{% for category in categories %}
-				<h2 class="h2 font-weight-bold mb-4">{{ category.name }}</h2>
-				<div class="row row-cols-1 row-cols-md-2 g-4">
+				<h2 class="mt-4 mb-2 fw-bold">{{ category.name }}</h2>
+				<div class="row">
 					{% for technology in category.technologies.all %}
-					<div class="col">
+					<div
+						class="col-lg-5 col-md-12 col-sm-12 my-2 mx-lg-4 mx-sm-0 border bg-light"
+					>
 						<a
 							href="{% url 'job_me:technology_detail' technology.id %}"
 							class="text-decoration-none"
 							aria-label="Explore questions on {{ technology.name }}"
 						>
 							<article
-								class="d-flex justify-content-between align-items-center bg-light rounded-lg p-3"
+								class="d-flex justify-content-between align-items-center p-3"
 							>
 								<div class="d-flex align-items-start gap-3">
 									<div
-										class="bg-dark text-white d-flex justify-content-center align-items-center rounded-lg p-2"
+										class="bg-dark text-white d-flex justify-content-center align-items-center p-2"
 										style="width: 80px; height: 80px; overflow: hidden"
 									>
 										<img
@@ -47,7 +49,7 @@
 									</div>
 
 									<div class="d-flex flex-column justify-content-center">
-										<h3 class="font-weight-bold h5 mb-2">
+										<h3 class="fw-bold mb-2 text-dark">
 											{{ technology.name }}
 										</h3>
 										<p class="text-muted mb-0">
