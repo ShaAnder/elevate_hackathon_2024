@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
 
+# from .views import trigger_500_error
+
 app_name = "job_me"
 
 urlpatterns = [
