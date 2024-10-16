@@ -152,6 +152,7 @@ Guidelines for contributing to the project:
 
 ## [Credits](#credits)
 
+![Team 3](static/images/read-me-images/team-three.png)
 **Team 3: The Gig Getters** demonstrated remarkable perseverance in the face of numerous challenges typical of a hackathon. Despite unforeseen setbacks, such as operating with fewer team members and managing reduced capacity due to injuries, we adapted and pushed forward. Through both adversity and success, the team remained united, with key individuals stepping up to ensure the successful delivery of our product. This commitment and teamwork were instrumental in overcoming obstacles and achieving our goals.
 
 Below are noteworthy resources and inspirational materials:
@@ -161,7 +162,7 @@ Below are noteworthy resources and inspirational materials:
 
 ## [Acknowledgements](#acknowledgements)
 
-Special thanks to the Code Institute Community Team and the amazing people on the Hackteam who give up their time to make it all happen.
+Special thanks to our Facilitator, Erik Vodopivec Forsman, the Code Institute Community Team and the amazing people on the Hackteam who give up their time to make it all happen.
 
 ![CI Volunteers Image](static/images/read-me-images/hackteem.png)
 
