@@ -113,22 +113,10 @@ body {
 }
 
 .tech-container {
-	margin-top: 2rem;
-	background-image: linear-gradient(
-		to bottom,
-		var(--main-green-dark),
-		var(--main-green-light)
-	);
+	background-image: linear-gradient(to bottom, #38a3a5, #57cc99);
 	color: var(--main-dark);
-	padding: 2rem;
-	height: auto;
 	border-radius: 12px;
-}
-
-.tech-container h1 {
-	margin-left: 1rem;
-	color: white;
-	font-weight: 900;
+	padding: 2rem;
 }
 
 .tech-container i {
