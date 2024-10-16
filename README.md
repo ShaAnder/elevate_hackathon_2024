@@ -38,14 +38,20 @@ Built using modern technologies such as **Bootstrap** and **Django**, "Job Me" a
 
 ## [Design](#design)
 
-### UI and UX
+### UI (User Interface)
 
- **Interactive Design**: The platform uses dynamic styling to create a responsive and visually engaging user experience.
+- **Hero Section**: Dynamic background images, large typography, and a prominent call-to-action encourage user engagement.
+- **Progress Indicators**: Animated circular progress bars provide visual feedback on user progress.
+- **Dark Mode**: A toggle switch allows users to change between light and dark themes.
+- **Custom Fonts and Colors**: The interface is styled with a modern font (Lato) and color schemes for light and dark modes.
+- **Carousel for Top Questions**: Visually appealing swiper-based carousel to display interview questions.
 
-- **Offcanvas Menu**: Users can access a sliding offcanvas menu for quick navigation, improving mobile and desktop usability.
-- **Progress Circles**: The platform visually displays user progress with animated circular progress indicators, enhancing user engagement.
-- **Profile Avatar**: Users can upload and view their profile avatars, with responsive design for profile pictures.
-- **Navigation Bar:**: Located at the top of the page, the navigation bar includes buttons with links that bring Users each different sections of the application.
+### UX (User Experience)
+
+- **Responsive Design**: The layout is optimized for all device sizes, offering a smooth experience on mobile, tablet, and desktop.
+- **Progress Tracking**: Users can track their progress across different technologies with intuitive visual indicators.
+- **Dark Mode Personalization**: Customizable light and dark modes improve accessibility and user comfort.
+- **Interactive Elements**: Engaging buttons and responsive UI elements create a smooth and satisfying user interaction.
 
 #### **Color Scheme**
 
