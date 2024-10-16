@@ -2,7 +2,7 @@
 
 ![home page](static/images/read-me-images/homepage-update.png)
 
-As part of the Code Institute's October Hackathon, Team 3: The Gig Getters built from scratch a project called **"Job Me"**. This entirely free all-in-one platform was designed to provide Software Developers with a comprehensive suite of resources to help them secure their ideal roles. Tailored to developers of all technical backgrounds, skill levels, and experience, this one-stop-shop simplifies job hunting while offering:
+As part of the **Code Institute's October 2024 Hackathon**, Team 3: The Gig Getters built from scratch a project called **"Job Me"**. This entirely free all-in-one platform was designed to provide Software Developers with a comprehensive suite of resources to help them secure their ideal roles. Tailored to developers of all technical backgrounds, skill levels, and experience, this one-stop-shop simplifies job hunting while offering:
 
 - Mock interview simulations
 - Progress tracking tools
@@ -16,7 +16,7 @@ Built using modern technologies such as **Bootstrap** and **Django**, "Job Me" a
 ## Table of Contents
 
 - [Features](#features)
-- [Color Scheme](#color-scheme)
+- [Design](#design)
 - [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
 - [Credits](#credits)
@@ -31,7 +31,17 @@ Key features of the project:
 - Feature 2
 - Feature 3
 
-## [Color Scheme](#color-scheme)
+## [Design](#design)
+
+### UI
+
+### **Navigation Bar:**
+
+- Located at the top of the page, the navigation bar includes links to different sections of the application, such as the home page and the about us page.
+
+### UX
+
+#### **Color Scheme**
 
 The following color scheme is used throughout the project, optimized for both light and dark modes.
 
@@ -73,11 +83,15 @@ Below are the CSS variables defining the color scheme used in this project:
 
 Below is a list of technologies and frameworks used in the project:
 
-- HTML5
-- CSS3
-- JavaScript (ES6+)
-- Bootstrap
-- Django
+- Backend:
+  - Django
+
+- Frontend:
+
+  - HTML5
+  - CSS3
+  - JavaScript (ES6+)
+  - Bootstrap
 
 ## [Contributing](#contributing)
 
@@ -97,13 +111,14 @@ Guidelines for contributing to the project:
 
 Below are noteworthy resources and inspirational materials:
 
-- a
-- b
-- c
+- [Code Academy Interview Simulator](https://www.codecademy.com/interview-simulator)
+- [Google Interview Warm Up](https://grow.google/certificates/interview-warmup/)
 
 ## [Acknowledgements](#acknowledgements)
 
 Special thanks to Code Institute and the amazing people who give up their time to make hackathons happen. Thank you to the volunteers for providing us with the opportunity to suffer and succeed.
+
+<!-- ![CI Volunteers Image]() -->
 
 ## [License](#license)
 
