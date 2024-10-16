@@ -177,12 +177,13 @@
     justify-content: space-between;
 }
 
-.top-subheader p {
-    font-size: 2rem;
+.top-subheader-p {
+    font-size: 1.5rem;
     font-weight: var(--subheading-font-weight);
     color: var(--main-med);
     opacity: 0.8;
-    width: 80%;
+    width: 70%;
+    
 }
 
 .top-questions-cards {
@@ -208,9 +209,9 @@
 }
 
 .top-questions-card-content button {
-    margin-top: 1rem;
-    width: 300px;
-    height: 300px;
+    margin-top: 1.5rem;
+    width: 250px;
+    height: 250px;
     border-radius: 30px;
     border: none;
     overflow: hidden;
@@ -246,7 +247,8 @@
 }
 
 .swiper-buttons {
-    position:relative;
+    display: flex;
+    position: relative;
     justify-content: space-between;
 }
 
@@ -276,7 +278,7 @@
 /*cta home buttons section */
 
 .cta-button-container {
-    margin-top: -3rem;
+    margin-top: -5rem;
     width: 70%;
 }
 
@@ -293,7 +295,7 @@
 }
 
 .cta-home-item h1 {
-    width: 80%;
+    width: 60%;
     margin: 1rem;
     font-size: 2.5rem;
     transition: all 0.5s;
