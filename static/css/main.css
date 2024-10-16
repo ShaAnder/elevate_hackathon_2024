@@ -20,9 +20,9 @@
 .offcanvas.offcanvas-start {
 	height: calc(100vh - 90px);
 	top: 90px;
+	transition: none !important;
 }
 .offcanvas-visible {
-	transform: none !important;
 	visibility: visible !important;
 	display: block !important;
 }
@@ -48,6 +48,45 @@
 
 .q-open:hover {
 	opacity: 0.8;
+}
+
+#show-answer-btn {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#show-answer-btn:hover {
+	text-decoration: underline;
+}
+
+/* <div class="animated-image-container">
+	<img
+		src="{% static 'images/cube.png' %}"
+		alt="Animated Cube"
+		class="animated-image"
+	/>
+</div> */
+.animated-image-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.animated-image {
+	width: 200px;
+	animation: bounceRotate 2s infinite;
+}
+
+@keyframes bounceRotate {
+	0%,
+	100% {
+		transform: translateY(0) rotate(0deg);
+	}
+	50% {
+		transform: translateY(-20px) rotate(5deg);
+	}
 }
 
 .progress-circle {
