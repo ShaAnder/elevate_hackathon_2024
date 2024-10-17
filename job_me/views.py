@@ -27,13 +27,13 @@ def about(request):
 
 
 def custom_404(request, exception):
-    return render(request, '404.html', status=404)
+    return render(request, "404.html", status=404)
 
-  
+
 def custom_500(request):
-    return render(request, '500.html', status=404)
+    return render(request, "500.html", status=404)
 
-  
+
 def interview(request):
     return render(request, "job_me/interview.html")
 
@@ -58,6 +58,7 @@ def category_list(request):
     return render(request, "job_me/category_list.html", context)
 
 
+@login_required
 def technology_detail(request, technology_id):
 
     technology = get_object_or_404(Technology, id=technology_id)
