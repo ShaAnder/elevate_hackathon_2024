@@ -1,4 +1,12 @@
-{% extends "base.html" %} {% load static %} {% block content %}
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+{% endblock%}
+
+{% block content %}
 
 <section id="hero" class="h-100">
 	<div class="container col-xxl-8 px-4 py-5">
@@ -107,18 +115,18 @@
 </section>
 <section id="top-questions">
 	<!-- View Top Questions Section -->
-	<div class="questions-carousel default-container">
+	<div class="questions-carousel">
 		<div class="swiper-wrapper content">
-			<div class="top-header">
+			<div class="top-header default-container">
 				<h1>Review Top Questions!</h1>
 			</div>
-			<div class="top-subheader-container">
-				<div class="top-subheader">
+			<div class="top-subheader-container default-container">
+				<div class="top-subheader default-container">
 					<h2 class="top-subheader-p">
 						Refresh your knowledge by checking out top questions
 					</h2>
 				</div>
-				<div class="swiper-buttons">
+				<div class="swiper-buttons ">
 					<button class="swiper-button-prev swiper-button">
 						<i class="fa-solid fa-chevron-left"></i>
 					</button>
