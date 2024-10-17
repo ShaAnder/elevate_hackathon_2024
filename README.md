@@ -1,6 +1,6 @@
 # [Job.Me - Technical Interview Trainer](https://job-me-bc754484e6f7.herokuapp.com/)
 
-[![home page](static/images/read-me-images/final-draft-hero-image.png)](https://job-me-bc754484e6f7.herokuapp.com/)
+  ![Call to Action landing page](static/images/read-me-images/newest-homepage.gif)
 
 As part of the **Code Institute's October 2024 Hackathon**, Team 3: The Gig Getters built from scratch a project called **"Job.Me"**. This entirely free all-in-one platform was designed to provide Software Developers with a comprehensive suite of resources to help them secure their ideal roles. Tailored to developers of all technical backgrounds, skill levels, and experience, this one-stop-shop simplifies job hunting while offering:
 
