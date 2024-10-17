@@ -75,7 +75,7 @@
 .default-container {
 	display: block;
 	position: relative;
-	left: 25%;
+	left: 10%;
 	justify-content: center;
 	flex-direction: column;
 	width: 80%;
@@ -189,6 +189,10 @@
 	opacity: 0.8;
 	width: 70%;
 }
+.top-questions-carousel {
+	display: flex;
+	justify-content: center;
+}
 
 .top-questions-cards {
 	height: 100%;
@@ -283,13 +287,14 @@
 
 .cta-button-container {
 	margin-top: -5rem;
-	width: 70%;
 }
 
 .cta-home-buttons {
-	flex-direction: row;
+	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	margin-bottom: 2rem;
+	justify-content: space-between;
 }
 
 .cta-home-item {
@@ -299,9 +304,10 @@
 }
 
 .cta-home-item h1 {
-	width: 57.5%;
+	width: 90%;
 	margin: 1rem;
-	font-size: 2.5rem;
+	margin-right: 0;
+	font-size: 2.2rem;
 	transition: all 0.5s;
 	text-align: center;
 }
@@ -323,7 +329,7 @@
 .cta-home-item button {
 	display: flex;
 	position: relative;
-	width: 150px;
+	width: 20%;
 	border: none;
 	border-radius: 30px;
 	height: 80px;
@@ -385,7 +391,7 @@
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     background-color: var(--main-purple-light);
     color:white;
-    opacity: 0.8;
+    opacity: 0.7;
     font-size: 2rem;
 }
 
