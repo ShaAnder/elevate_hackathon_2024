@@ -1,0 +1,39 @@
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 1.5rem 0;
+    border-top: 2px solid #ffa500;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: #ffa500;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer .footer-team-link {
+    font-weight: bold;
+}
+
+.footer i {
+    color: #ffa500;
+    font-size: 1.5rem;
+    margin-left: 0.5rem; 
+    transition: color 0.3s;
+    vertical-align: middle;
+}
+
+.footer i:hover {
+    color: #fff;
+}
