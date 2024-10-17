@@ -468,3 +468,66 @@
 		margin-bottom: 0.5rem;
 	}
 }
+
+@media screen and (max-width: 480px) {
+	.top-subheader-container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.top-header h1 {
+		text-align: center;
+	}
+
+	.top-subheader-p {
+		width: 100%;
+		text-align: center;
+		left: 5%;
+	}
+
+	.top-questions-card-content button {
+		height:200px;
+		width: 200px;
+	}
+
+	.slide-section {
+		top:10%;
+		flex-direction: column;
+		height:220px;
+	}
+
+
+	.top-questions-card-content button h1 {
+		top: 5%;
+		font-size:2rem;
+	}
+
+	.top-questions-card-content button p {
+		font-size: 1rem;
+		top: 30%;
+	}
+
+	.top-questions-cards {
+		width:100%;
+		overflow: visible;
+		justify-content: center;
+		margin-top: 14rem;
+		margin-bottom: 16rem;
+	}
+
+	.cta-home-item h1 {
+		font-size: 1.5rem;
+		height: 80px;
+		line-height: 3rem;
+	}
+
+	.cta-signup-header h1 {
+		font-size: 1.5rem;
+	}
+
+	.cta-signup-button {
+		width: 200px;
+		font-size: .8rem;
+		margin-bottom: 0.5rem;
+	}
+}
