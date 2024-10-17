@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 /* 
 .dark-mode-toggle {
@@ -56,7 +56,7 @@
 
 	/* fonts */
 
-	--main-font: Inter;
+	--main-font: Lato;
 	--heading-font-weight: 700;
 	--subheading-font-weight: 400;
 	--paragraph-font-weight: 300;
@@ -75,10 +75,10 @@
 .default-container {
 	display: block;
 	position: relative;
-	left: 10%;
+	left: 25%;
 	justify-content: center;
 	flex-direction: column;
-	width: 80%;
+	width: 50%;
 }
 
 
@@ -126,10 +126,22 @@
 }
 
 .tech-container {
-	background-image: linear-gradient(to bottom, #38a3a5, #57cc99);
+	margin-top: 2rem;
+	background-image: linear-gradient(
+		to bottom,
+		var(--main-green-dark),
+		var(--main-green-light)
+	);
 	color: var(--main-dark);
+	padding: 2rem;
+	height: auto;
 	border-radius: 12px;
-	padding: 4rem;
+}
+
+.tech-container h1 {
+	margin-left: 1rem;
+	color: white;
+	font-weight: 900;
 }
 
 .tech-container i {
@@ -174,7 +186,6 @@
 .top-header h1 {
 	font-size: 3.5rem;
 	font-weight: var(--heading-font-weight);
-	justify-content: left;
 }
 
 .top-subheader-container {
@@ -189,17 +200,12 @@
 	opacity: 0.8;
 	width: 70%;
 }
-.top-questions-carousel {
-	display: flex;
-	justify-content: center;
-}
 
 .top-questions-cards {
 	height: 100%;
 	display: flex;
 	position: relative;
 	overflow: hidden;
-	width: 80%;
 }
 
 .top-questions-cards section {
@@ -287,14 +293,13 @@
 
 .cta-button-container {
 	margin-top: -5rem;
+	width: 70%;
 }
 
 .cta-home-buttons {
-	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	justify-content: center;
 	margin-bottom: 2rem;
-	justify-content: space-between;
 }
 
 .cta-home-item {
@@ -304,10 +309,9 @@
 }
 
 .cta-home-item h1 {
-	width: 90%;
+	width: 57.5%;
 	margin: 1rem;
-	margin-right: 0;
-	font-size: 2.2rem;
+	font-size: 2.5rem;
 	transition: all 0.5s;
 	text-align: center;
 }
@@ -329,7 +333,7 @@
 .cta-home-item button {
 	display: flex;
 	position: relative;
-	width: 20%;
+	width: 150px;
 	border: none;
 	border-radius: 30px;
 	height: 80px;
@@ -413,7 +417,7 @@
     background-color: #0056b3;
 }
 
-.dark-mode .dark-mode-toggle {
+.dark-mode, .dark-mode-toggle {
     background-color: #4e4e4e;
     color: white;
 }
