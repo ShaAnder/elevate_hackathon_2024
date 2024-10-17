@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 /* 
 .dark-mode-toggle {
@@ -56,7 +56,7 @@
 
 	/* fonts */
 
-	--main-font: Lato;
+	--main-font: Inter;
 	--heading-font-weight: 700;
 	--subheading-font-weight: 400;
 	--paragraph-font-weight: 300;
@@ -126,22 +126,10 @@
 }
 
 .tech-container {
-	margin-top: 2rem;
-	background-image: linear-gradient(
-		to bottom,
-		var(--main-green-dark),
-		var(--main-green-light)
-	);
+	background-image: linear-gradient(to bottom, #38a3a5, #57cc99);
 	color: var(--main-dark);
-	padding: 2rem;
-	height: auto;
 	border-radius: 12px;
-}
-
-.tech-container h1 {
-	margin-left: 1rem;
-	color: white;
-	font-weight: 900;
+	padding: 4rem;
 }
 
 .tech-container i {

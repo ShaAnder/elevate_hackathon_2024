@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     "users",
     "job_me",
+    "storages",
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -175,3 +176,26 @@ SOCIALACCOUNT_PROVIDERS = {
         ],
     }
 }
+
+AWS_S3_OBJECT_PARAMETERS = {
+    "Expires": "Thu, 31 Dec 2099 20:00:00 GMT",
+    "CacheControl": "max-age=94608000",
+}
+
+AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME")
+AWS_S3_REGION_NAME = "eu-west-1"
+AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+
+AWS_S3_URL_PROTOCOL = "https"
+AWS_S3_USE_SSL = True
+AWS_S3_VERIFY = True
+
+# Static file configuration
+STATICFILES_STORAGE = "myapp.storages.StaticStorage"
+STATIC_URL = f"{AWS_S3_URL_PROTOCOL}://{AWS_S3_CUSTOM_DOMAIN}/static/"
+
+# Media file configuration
+DEFAULT_FILE_STORAGE = "myapp.storages.MediaStorage"
+MEDIA_URL = f"{AWS_S3_URL_PROTOCOL}://{AWS_S3_CUSTOM_DOMAIN}/media/"

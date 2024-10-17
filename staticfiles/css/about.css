@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+	/* setup colors for light and dark mode + green buttons */
+	/* 
+        default colors:
+            - main lightest for backgrond
+            - main dark for headings / paragraphs
+            - main med for sub headings
+            - dark green for button
+            
+        dark mode colors (later):
+            - nav background = main dark
+            - Heading text / paragraphs = main lightest
+            - sub headsings = main-light
+            - light green for buttons
+    /*
+
+    /* main colors */
+	--main-lightest: #ffffff;
+	--main-light: #cccccc;
+	--main-med: #555555;
+	--main-dark: #3a3a4a;
+
+	/* default light green, when we hover over buttons becomes darker */
+	--main-green-light: #36af57;
+	--main-green-dark: #2b8c46;
+
+	/* box colors for light and dark mode */
+	--box-light-background-light: #f1f1f1;
+	--box-background-dark: #cccccc;
+
+	/* fonts */
+
+	--main-font: Lato;
+	--heading-font-weight: 700;
+	--subheading-font-weight: 400;
+	--paragraph-font-weight: 300;
+}
+
+/* ABOUT PAGE */
+
+.about-container {
+	height: 5rem;
+}
+
+.about-section {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2em;
+	background-color: rgba(54, 175, 87, 0.2);
+	color: var(--main-dark);
+	border-radius: 12px;
+	padding-top: 2rem;
+	margin: 2rem;
+}
+
+.about-content {
+	flex: 1;
+	max-width: 50%;
+}
+
+.about-content h1 {
+	font-size: 2.5em;
+	margin-bottom: 0.5em;
+	font-weight: bold;
+}
+
+.about-content p {
+	font-size: 1.2em;
+	line-height: 1.6;
+	margin-bottom: 1.5em;
+	text-align: start;
+}
+
+.cta-button {
+	padding: 0.75em 1.5em;
+	background-color: var(--main-green-dark);
+	color: var(--text);
+	border: none;
+	border-radius: 8px;
+	font-size: 1.1em;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	text-decoration: none;
+}
+
+.cta-button:hover {
+	background-color: var(--main-green-light);
+	color: var(--main-light);
+	text-decoration: none;
+}
+
+.about-image {
+	flex: 1;
+	position: relative;
+	max-width: 40%;
+	text-align: right;
+}
+
+.about-image img {
+	max-width: 100%;
+	border-radius: 12px;
+}
+
+/* MEET THE TEAM SECTION */
+
+/* Team Section */
+#team-section {
+	padding: 2em;
+}
+
+.team-content h2 {
+	font-size: 2.5em;
+	margin-bottom: 1.5em;
+	text-align: center;
+	background-color: #00000003;
+}
+
+.team-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 2em;
+	margin: 0 auto;
+}
+
+.about-body {
+	width: 100%;
+	background-color: var(--main-lightest);
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	min-height: 450px;
+}
+
+.card-image {
+	padding: 20px 20px 0px 20px;
+}
+
+.card-image img {
+	width: 180px;
+	height: fit-content;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.card-body {
+	/* padding: 10px 20px 20px 20px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: fit-content; */
+	padding: 10px 20px 20px 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex-grow: 1; /* Grows to take available space, pushing the footer down */
+}
+
+.card-title {
+	font-size: 1.5em;
+	margin-bottom: 10px;
+	font-weight: bold;
+	color: var(--accent);
+}
+
+.card-role {
+	font-size: 1em;
+	color: var(--accent);
+	margin: 0 auto;
+}
+
+.card-text {
+	font-size: 1em;
+	color: var(--accent);
+	/* margin-bottom: 20px;
+    margin-left: 2rem;
+    margin-right: 2rem; */
+	margin: 20px 2rem 10px 2rem;
+	flex-grow: 1;
+}
+
+.card-footer {
+	padding: 10px 20px;
+	background-color: var(--main-lightest); /* Light gray background */
+	color: var(--accent);
+	border-top: 1px solid var(--text); /* Adds a subtle line between the body and footer */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px; /* Space between elements inside the footer */
+}
+
+.button-group {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	margin-top: 10px;
+}
+
+.logo {
+	display: inline-block;
+	padding: 10px 20px;
+	color: var(--main-dark);
+	font-size: 1.5rem;
+	border-radius: 5px;
+	text-decoration: none;
+	transition: background-color 0.4s ease;
+	text-align: center;
+	width: 6rem;
+}
+
+.logo:hover {
+	background-color: var(--main-green-light);
+	color: var(--main-light);
+}
+
+.bold {
+	font-weight: bold;
+}
+
+@media screen and (max-width: 1500px) {
+	.default-container {
+		left: 15%;
+		width: 70%;
+	}
+
+	.team-grid {
+		grid-template-columns: repeat(2, 1fr); /* Display 2 cards per row */
+		gap: 1.5em;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.team-grid {
+		grid-template-columns: repeat(2, 1fr); /* Display 2 cards per row */
+		gap: 1.5em;
+	}
+}
+
+/* Responsive Styles for tablets (screens smaller than 768px) */
+@media screen and (max-width: 768px) {
+	.default-container {
+		left: 5%;
+		width: 90%;
+	}
+
+	.team-grid {
+		grid-template-columns: repeat(1, 1fr);
+		gap: 1.5em;
+	}
+
+	.about-section {
+		flex-direction: column; /* Stack the content vertically */
+		text-align: center;
+		padding: 1.5em;
+	}
+
+	.about-content {
+		max-width: 100%; /* Take full width */
+	}
+
+	.about-content h1 {
+		font-size: 2em; /* Slightly smaller */
+	}
+
+	.about-content p {
+		font-size: 1.1em; /* Adjust text size */
+	}
+
+	.cta-button {
+		font-size: 1em; /* Slightly smaller button */
+		padding: 0.6em 1.2em;
+	}
+
+	.about-image {
+		max-width: 80%; /* Adjust image width */
+		margin-top: 1.5em; /* Add space between image and text */
+	}
+
+	.about-image img {
+		max-width: 100%; /* Ensure image stays responsive */
+	}
+
+	/* TEAM SECTION */
+	.team-grid {
+		grid-template-columns: 1fr; /* Display 1 card per row */
+		gap: 1em;
+	}
+
+	.card {
+		margin: 0 auto;
+	}
+}
+
+/* Responsive Styles for mobile devices (screens smaller than 480px) */
+@media screen and (max-width: 480px) {
+	.default-container {
+		width: 100%;
+	}
+
+	.about-section {
+		padding: 1em; /* Reduce padding for smaller screens */
+	}
+
+	.about-content h1 {
+		font-size: 1.8em; /* Reduce heading size */
+	}
+
+	.about-content p {
+		font-size: 1em; /* Reduce paragraph font size */
+	}
+
+	.cta-button {
+		font-size: 0.9em;
+		padding: 0.5em 1em;
+	}
+
+	.about-image {
+		max-width: 100%; /* Full width for small devices */
+		margin-top: 1.2em;
+	}
+}

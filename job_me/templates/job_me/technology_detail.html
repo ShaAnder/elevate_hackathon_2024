@@ -6,34 +6,36 @@
 				class="d-flex flex-column align-items-md-start align-items-center my-5"
 			>
 				<!-- Technology Title and Progress Bar -->
-				<div class="text-4xl font-bold mb-6 d-flex flex-column gap-3 w-100">
-					<h2 class="display-4 fw-bold">{{ technology.name }}</h2>
-					<div class="w-50 d-flex align-items-center mb-3">
-						<span class="fs-5">Progress&nbsp;&nbsp;</span>
-						<div class="w-100">
-							<div class="progress bg-light border" style="height: 10px">
-								<div
-									class="progress-bar bg-success"
-									role="progressbar"
-									style="width: {{ user_progress.progress_percentage|default:0 }}%"
-									aria-valuenow="{{ user_progress.progress_percentage|default:0 }}"
-									aria-valuemin="0"
-									aria-valuemax="100"
-								></div>
-							</div>
-						</div>
-					</div>
-				</div>
+				<div class="text-4xl mb-6 d-flex flex-column gap-3 w-100">
+                    <h2 class="display-4 fw-bold">{{ technology.name }}</h2>
+                    <div class="d-flex align-items-center mb-3 w-75">
+                        <span class="fs-5">Progress&nbsp;&nbsp;</span>
+                        <div class="w-100">
+                            <div class="progress bg-light border" style="height: 10px">
+                                <div
+                                    class="progress-bar bg-success"
+                                    role="progressbar"
+                                    style="width: {{ user_progress.progress_percentage|default:0 }}%"
+                                    aria-valuenow="{{ user_progress.progress_percentage|default:0 }}"
+                                    aria-valuemin="0"
+                                    aria-valuemax="100"
+                                ></div>
+                            </div>
+                            
+                        </div>
+                        <p class="m-0">&nbsp;&nbsp;{{ user_progress.progress_percentage }}%</p> 
+                    </div>                  
+                </div>
 
-				<!-- Technology Description -->
+
 				<div class="mb-6 w-100">
 					<p>{{ technology.description }}</p>
 				</div>
 
-				<!-- Modules, Topics, Questions -->
+
 				<div class="w-100">
 					{% for module in modules %}
-					<!-- Module Header -->
+
 					<div class="mb-4">
 						<div class="mb-3 border-bottom pb-1">
 							<div class="my-2 fw-bold">
