@@ -218,7 +218,7 @@
 .top-questions-card-content {
 	position: relative;
 	border-radius: 20px;
-	height: 400px;
+	height: 300px;
 	margin-right: 3em;
 }
 
@@ -234,7 +234,7 @@
 
 .top-questions-card-content i {
 	font-size: 10em;
-	color: var(--main-green-dark);
+	color: #57cc99;
 	opacity: 0.2;
 	position: relative;
 	top: 10%;
@@ -373,9 +373,10 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-
-    background: linear-gradient(to bottom, var(--main-green-dark), var(--main-green-light));
-    height: 200px;
+	width: 90%;
+	left: 5%;
+	background-image: linear-gradient(to top, #38a3a5, #57cc99) ;   
+	height: 200px;
     border-radius: 20px;
 }
 
@@ -390,12 +391,11 @@
     width: 250px;
     height: auto;
     padding: 5px;
-    border: none;
+    border: 1px solid black;
     border-radius: 20px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    background-color: var(--main-purple-light);
+	background-color: #edba02;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     color:white;
-    opacity: 0.8;
     font-size: 2rem;
 }
 
@@ -417,7 +417,7 @@
     background-color: #0056b3;
 }
 
-.dark-mode .dark-mode-toggle {
+.dark-mode, .dark-mode-toggle {
     background-color: #4e4e4e;
     color: white;
 }
@@ -433,4 +433,105 @@
     justify-content: space-around;
 }
 
+@media screen and (max-width: 768px) {
+	.top-questions-card-content button {
+		height:200px;
+		width: 200px;
+	}
 
+	.top-questions-card-content button h1 {
+		top: 5%;
+		font-size:2rem;
+	}
+
+	.top-questions-card-content button p {
+		font-size: 1rem;
+		top: 30%;
+	}
+
+	.top-questions-cards {
+		width:100%;
+		overflow: visible;
+		justify-content: center;
+		left: 5%;
+	}
+
+	.cta-home-item h1 {
+		font-size: 1.5rem;
+		height: 80px;
+		line-height: 3rem;
+	}
+
+	.cta-signup-header h1 {
+		font-size: 1.5rem;
+	}
+
+	.cta-signup-button {
+		width: 200px;
+		font-size: .8rem;
+		margin-bottom: 0.5rem;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.top-subheader-container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.top-header h1 {
+		text-align: center;
+	}
+
+	.top-subheader-p {
+		width: 100%;
+		text-align: center;
+		left: 5%;
+	}
+
+	.top-questions-card-content button {
+		height:200px;
+		width: 200px;
+	}
+
+	.slide-section {
+		top:10%;
+		flex-direction: column;
+		height:220px;
+	}
+
+
+	.top-questions-card-content button h1 {
+		top: 5%;
+		font-size:2rem;
+	}
+
+	.top-questions-card-content button p {
+		font-size: 1rem;
+		top: 30%;
+	}
+
+	.top-questions-cards {
+		width:100%;
+		overflow: visible;
+		justify-content: center;
+		margin-top: 14rem;
+		margin-bottom: 16rem;
+	}
+
+	.cta-home-item h1 {
+		font-size: 1.5rem;
+		height: 80px;
+		line-height: 3rem;
+	}
+
+	.cta-signup-header h1 {
+		font-size: 1.5rem;
+	}
+
+	.cta-signup-button {
+		width: 200px;
+		font-size: .8rem;
+		margin-bottom: 0.5rem;
+	}
+}

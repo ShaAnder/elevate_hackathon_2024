@@ -21,7 +21,7 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "job-me-bc754484e6f7.herokuapp.com",
-    "8000-shaander-elevatehackath-uaa57pqvyrs.ws-eu116.gitpod.io",
+    "8000-shaander-elevatehackath-6m90ift8l4t.ws-eu116.gitpod.io",
 ]
 
 
@@ -102,23 +102,23 @@ SOCIALACCOUNT_EMAIL_VERIFICATION = "none"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
-
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.getenv("DB_NAME"),
-        "USER": os.getenv("DB_USER"),
-        "PASSWORD": os.getenv("DB_PASSWORD"),
-        "HOST": os.getenv("DB_HOST"),
-        "PORT": os.getenv("DB_PORT"),
-    },
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
 }
+
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": os.getenv("DB_NAME"),
+#         "USER": os.getenv("DB_USER"),
+#         "PASSWORD": os.getenv("DB_PASSWORD"),
+#         "HOST": os.getenv("DB_HOST"),
+#         "PORT": os.getenv("DB_PORT"),
+#     },
+# }
 
 
 # Password validation
@@ -175,3 +175,26 @@ SOCIALACCOUNT_PROVIDERS = {
         ],
     }
 }
+
+# AWS_S3_OBJECT_PARAMETERS = {
+#     "Expires": "Thu, 31 Dec 2099 20:00:00 GMT",
+#     "CacheControl": "max-age=94608000",
+# }
+
+# AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
+# AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+# AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME")
+# AWS_S3_REGION_NAME = "eu-west-1"
+# AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+
+# AWS_S3_URL_PROTOCOL = "https"
+# AWS_S3_USE_SSL = True
+# AWS_S3_VERIFY = True
+
+# # Static file configuration
+# STATICFILES_STORAGE = "myapp.storages.StaticStorage"
+# STATIC_URL = f"{AWS_S3_URL_PROTOCOL}://{AWS_S3_CUSTOM_DOMAIN}/static/"
+
+# # Media file configuration
+# DEFAULT_FILE_STORAGE = "myapp.storages.MediaStorage"
+# MEDIA_URL = f"{AWS_S3_URL_PROTOCOL}://{AWS_S3_CUSTOM_DOMAIN}/media/"
